@@ -1,0 +1,22 @@
+<!--
+   "contact-us": {
+    "For-support-call-us": "For support call us"
+  }
+ -->
+<section class="help text-center contact-us">
+  <h4>
+    <!-- For support call us -->
+    {{ 'authentication.contact-us.For-support-call-us' | transloco }}
+
+  </h4>
+  <img src="assets/background/Call center.gif" class="w-100" alt="Contact us">
+  <br><br>
+
+  <div>
+    <a href="tel:{{phone}}" class="btn btn-primary btn-lg">
+      <!-- <i class="fa fa-phone"></i> -->
+      <img class="Calling" src="assets/icons/Calling.svg" alt="Calling">
+      {{phone}}
+    </a>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+<section class="listing-layout">
+  <div class="main-div" [ngClass]="{'hide': isHideSearch , 'show' : !isHideSearch}" >
+    <div class="container">
+      <!-- *ngIf="!isHideSearch" -->
+      <div class="form">
+        <app-search-form ></app-search-form>
+
+      </div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+
+</section>

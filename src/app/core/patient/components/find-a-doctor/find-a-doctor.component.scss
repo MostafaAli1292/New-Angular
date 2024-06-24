@@ -1,0 +1,46 @@
+section.list{
+  background-color: #F3F3FF;
+  overflow: hidden;
+  .filter-tools{
+    // in mobile
+    @media (max-width: 767px){
+      margin-top: 40px;
+      .row{
+        .text-end{
+          margin-top: 20px;
+          text-align: left !important;
+        }
+      }
+    }
+
+  }
+
+  .no-results{
+    .card{
+      // width: 50%;
+      // margin: 0 auto;
+      margin-bottom: 50px;
+      .card-body{
+        text-align: center;
+        padding: 50px 0;
+        img{
+          margin-bottom: 20px;
+        }
+        h5{
+          font-size: 20px;
+          font-weight: 600;
+          margin-bottom: 10px;
+        }
+        p{
+          font-size: 14px;
+          color: #8F949F;
+          margin-bottom: 0;
+        }
+      }
+      &:hover{
+        border: 1px solid transparent !important;
+      }
+    }
+  }
+
+}

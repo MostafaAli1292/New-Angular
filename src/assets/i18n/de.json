@@ -1,0 +1,604 @@
+{
+  "app-name": "Salamtak",
+  "form": {
+    "input": {
+      "email_or_phone": {
+        "label": "E-Mail oder Telefon",
+        "placeholder": "Geben Sie Ihre E-Mail oder Telefonnummer ein",
+        "validation": {
+          "required": "E-Mail oder Telefon ist erforderlich"
+        }
+      },
+      "phone": {
+        "label": "Telefonnummer",
+        "placeholder": "Geben Sie Ihr Telefon ein",
+        "validation": {
+          "required": "Telefonnummer ist erforderlich",
+          "pattern": "Das Telefon hat ein ungültiges Format, bitte überprüfen Sie es.",
+          "minlength": "Telefon muss mindestens 11 Zeichen lang sein.",
+          "maxlength": "Telefon darf nicht länger als 11 Zeichen sein."
+        }
+      },
+      "password": {
+        "label": "Passwort",
+        "placeholder": "Geben Sie Ihr Passwort ein",
+        "validation": {
+          "required": "Passwort wird benötigt",
+          "minlength": "Das Passwort muss mindestens 6 Zeichen lang sein."
+        }
+      },
+      "confirm-password": {
+        "label": "Bestätige das Passwort",
+        "placeholder": "Geben Sie Ihr Bestätigungspasswort ein",
+        "validation": {
+          "required": "Passwort bestätigen ist erforderlich",
+          "notMatch": "Passwort und Passwort bestätigen stimmen nicht überein",
+          "minlength": "Das Passwort muss mindestens 6 Zeichen lang sein."
+        }
+      },
+      "old-password": {
+        "label": "Altes Passwort",
+        "placeholder": "Geben Sie Ihr altes Passwort ein",
+        "validation": {
+          "required": "Altes Passwort ist erforderlich",
+          "minlength": "Das Passwort muss mindestens 6 Zeichen lang sein."
+        }
+      },
+      "full-name-en": {
+        "label": "Vollständiger Name auf Englisch",
+        "placeholder": "Geben Sie Ihren vollständigen Namen ein de",
+        "validation": {
+          "required": "Vollständiger Name En ist erforderlich",
+          "pattern": "Vollständiger Name En ist ein ungültiges Format, bitte überprüfen Sie es."
+        }
+      },
+      "full-name-ar": {
+        "label": "Vollständiger Name auf Arabisch",
+        "placeholder": "Geben Sie Ihren vollständigen Namen ein ar",
+        "validation": {
+          "required": "Vollständiger Name Ar ist erforderlich",
+          "pattern": "Der vollständige Name Ar hat ein ungültiges Format. Bitte überprüfen Sie es."
+        }
+      },
+      "email": {
+        "label": "E-Mail-Addresse",
+        "placeholder": "Geben sie ihre E-Mail Adresse ein",
+        "validation": {
+          "required": "E-Mail ist erforderlich",
+          "pattern": "E-Mail hat ein ungültiges Format, bitte überprüfen Sie es."
+        }
+      },
+      "name": {
+        "label": "Name",
+        "placeholder": "Gib deinen Namen ein",
+        "validation": {
+          "required": "Name ist erforderlich",
+          "pattern": "Der Name hat ein ungültiges Format. Bitte überprüfen Sie es."
+        }
+      },
+      "subject": {
+        "label": "Thema",
+        "placeholder": "Geben Sie Ihren Betreff ein",
+        "validation": {
+          "required": "Betreff ist erforderlich"
+        }
+      },
+      "message": {
+        "label": "Nachricht",
+        "placeholder": "Gib deine Nachricht ein",
+        "validation": {
+          "required": "Nachricht ist erforderlich"
+        }
+      },
+      "gender": {
+        "label": "Geschlecht",
+        "male": "Männlich",
+        "female": "Weiblich",
+        "validation": {
+          "required": "Nachricht ist erforderlich"
+        }
+      },
+      "dob": {
+        "label": "Geburtsdatum",
+        "inputs": {
+          "day": {
+            "label": "Tag",
+            "validation": {
+              "required": "Tag ist erforderlich"
+            }
+          },
+          "month": {
+            "label": "Monat",
+            "validation": {
+              "required": "Monat ist erforderlich"
+            }
+          },
+          "year": {
+            "label": "Jahr",
+            "validation": {
+              "required": "Jahr ist erforderlich"
+            }
+          }
+        }
+      },
+      "nationality": {
+        "label": "Staatsangehörigkeit",
+        "validation": {
+          "required": "Nationalität ist erforderlich"
+        }
+      },
+      "occupation": {
+        "label": "Beruf",
+        "validation": {
+          "required": "Beruf ist erforderlich"
+        }
+      },
+      "city": {
+        "label": "Stadt",
+        "validation": {
+          "required": "Stadt ist erforderlich"
+        }
+      },
+      "area": {
+        "label": "Bereich",
+        "validation": {
+          "required": "Fläche ist erforderlich"
+        }
+      },
+      "street": {
+        "label": "Straße",
+        "validation": {
+          "required": "Straße ist erforderlich"
+        }
+      },
+      "building-number": {
+        "label": "Hausnummer",
+        "validation": {
+          "required": "Gebäudenummer ist erforderlich"
+        }
+      },
+      "floor-number": {
+        "label": "Stockwerk Nummer",
+        "validation": {
+          "required": "Etagennummer ist erforderlich"
+        }
+      },
+      "apartment-number": {
+        "label": "Wohnungsnummer",
+        "validation": {
+          "required": "Wohnungsnummer ist erforderlich"
+        }
+      },
+      "hight": {
+        "label": "Höhe",
+        "validation": {
+          "required": "Höhe ist erforderlich"
+        }
+      },
+      "weight": {
+        "label": "Gewicht",
+        "validation": {
+          "required": "Gewicht ist erforderlich"
+        }
+      },
+      "blood-group": {
+        "label": "Blutgruppe",
+        "validation": {
+          "required": "Blutgruppe ist erforderlich"
+        }
+      },
+      "pressure": {
+        "label": "Druck (MM/GG)",
+        "validation": {
+          "required": "Druck ist erforderlich"
+        }
+      },
+      "sugar-level": {
+        "label": "Zuckergehalt (MG/DL)",
+        "validation": {
+          "required": "Zuckergehalt ist erforderlich"
+        }
+      },
+      "medical-allergies": {
+        "label": "Medizinische Allergien",
+        "validation": {
+          "required": "Medizinische Allergien sind erforderlich"
+        }
+      },
+      "food-allergies": {
+        "label": "Essensallergien",
+        "validation": {
+          "required": "Nahrungsmittelallergien ist erforderlich"
+        }
+      },
+      "other-allergies": {
+        "label": "Andere Allergien",
+        "validation": {
+          "required": "Andere Allergien sind erforderlich"
+        }
+      },
+      "prescriptions": {
+        "label": "Rezepte",
+        "validation": {
+          "required": "Rezepte sind erforderlich"
+        }
+      },
+      "current-medication": {
+        "label": "Derzeitige Medikamente",
+        "validation": {
+          "required": "Aktuelle Medikamente sind erforderlich"
+        }
+      },
+      "past-medication": {
+        "label": "Vergangene Medikamente",
+        "validation": {
+          "required": "Frühere Medikamente sind erforderlich"
+        }
+      },
+      "injuries": {
+        "label": "Verletzungen",
+        "validation": {
+          "required": "Verletzungen erforderlich"
+        }
+      },
+      "chronic-diseases": {
+        "label": "Chronische Krankheit",
+        "validation": {
+          "required": "Chronische Erkrankungen erforderlich"
+        }
+      },
+      "surgeries": {
+        "label": "Operationen",
+        "validation": {
+          "required": "Operationen sind erforderlich"
+        }
+      }
+    },
+    "buttons": {
+      "send": "Schicken",
+      "login": "Anmeldung",
+      "save": "Speichern",
+      "sign-up": "Anmeldung",
+      "verify": "Verifizieren",
+      "cancel": "Stornieren",
+      "save-changes": "Änderungen speichern",
+      "next": "Nächste",
+      "previous": "Vorherige"
+    }
+  },
+  "swal": {
+    "confirmBooking": {
+      "title": "Buchung bestätigen",
+      "text": "Möchten Sie diesen Termin wirklich buchen?",
+      "confirmButtonText": "Ja, buchen!",
+      "cancelButtonText": "Nein, stornieren!"
+    },
+    "Soon":{
+      "title":"Der Dienst wird später aktiviert",
+      "ConfirmButtonText":"Gut"
+    }
+  },
+  "header": {
+    "links": {
+      "home": "Heim",
+      "find-a-doctor": "Finden Sie einen Arzt",
+      "blogs": "Blogs",
+      "about": "Um",
+      "contact": "Kontakt"
+    },
+    "buttons": {
+      "login": "Anmeldung",
+      "sign-up": "Anmeldung"
+    },
+    "drop-down": {
+      "edit-profile": "Profil bearbeiten",
+      "my-schedule": "Mein Terminplan",
+      "change-password": "Kennwort ändern",
+      "language": "Sprache",
+      "sign-out": "Austragen"
+    }
+  },
+  "footer": {
+    "title": "Finden Sie Ihr besseres Leben mit Salamtak",
+    "columns": {
+      "site-map": {
+        "title": "Seitenverzeichnis",
+        "links": {
+          "about": "About Us",
+          "Our-Team": "Our Team ",
+          "Careers": "Careers",
+          "Press":"Salamtak Gate"
+
+        }
+      },
+      "landing": {
+        "title": "Landung",
+        "links": {
+          "mobile-app": "App",
+          "clinics": "Kliniken",
+          "doctors": "Ärzte",
+          "hospitals": "Krankenhäuser",
+          "PolyClinic":"PolyClinic",
+          "pharmacies":"Pharmacies",
+          "insurance":"insurance",
+          "online-consults": "Online-Beratung",
+          "booking": "Buchung"
+        }
+      },
+      "utility": {
+        "title": "Dienstprogramm",
+        "links": {
+          "faq": "FAQ",
+          "terms-conditions": "Bedingungen"
+        }
+      }
+    }
+  },
+  "search-form": {
+    "specialty": {
+      "label": "Spezialität auswählen",
+      "placeholder": "Spezialität auswählen",
+      "search-placeholder": "Spezialität wählen"
+    },
+    "city": {
+      "label": "Stadt",
+      "placeholder": "Wählen Sie Stadt",
+      "search-placeholder": "Wählen Sie Stadt"
+    },
+    "area": {
+      "label": "Bereich",
+      "placeholder": "Wählen Sie Bereich",
+      "search-placeholder": "Wählen Sie Bereich"
+    },
+    "name": {
+      "label": "Suche mit Name",
+      "placeholder": "Suche mit Name"
+    }
+  },
+  "home": {
+    "main-section": {
+      "title": "Schützen und pflegen",
+      "title-span": "Ihre Gesundheit"
+    },
+    "services": {
+      "title": "Unsere Dienstleistungen",
+      "description": "Wir haben mehrere Dienste, die Sie wählen können. ",
+      "cards": {
+        "text": "Sie können uns für jegliche Unterstützung anrufen",
+        "button": "buchen Sie jetzt"
+      }
+    },"ask": {
+      "title": "Have a Medical Question?",
+      "title-span": "Submit your medical question and receive an answer from a specialized doctor"
+    },
+    "medical-services-directory": {
+      "title": "Verzeichnis der medizinischen Dienste",
+      "description": "Wir haben mehrere Dienste, die Sie wählen können. ",
+      "cards": {
+        "radiology-center": "Radiologisches Zentrum",
+        "laboratories": "Labore",
+        "pharmacies": "Apotheken",
+        "polyclinics": "Polikliniken",
+        "hospitals": "Krankenhäuser"
+      }
+    },
+    "trusted": {
+      "title": "Your health and the health of our families are important to us and every doctor",
+      "description": "Mit guter Erfahrung haben uns unsere Kunden vertraut, dass wir uns um ihre Gesundheit kümmern"
+    },
+    "popular-doctors": {
+      "title": "Beliebte Ärzte",
+      "see-all": "Alles sehen"
+    },
+    "top-specialties": {
+      "title": "Top-Spezialitäten",
+      "cards": {
+        "Skin": "Haut",
+        "Teeth": "Zähne",
+        "Child": "Kind",
+        "Therapist": "Therapeut"
+      }
+    },
+    "what-people-say": {
+      "small": "ZEUGNIS",
+      "big": "Was die Leute sagen"
+    },
+    "our-blog": {
+      "title": "Unser Blog",
+      "description": "Erweitern Sie Ihr Wissen, indem Sie Artikel mit diesem Blog lesen. ",
+      "see-all": "Alles sehen"
+    },
+    "download-section": {
+      "title": "Holen Sie sich jetzt die Salamtak-App"
+    }
+  },
+  "find-a-doctor": {
+    "breadcrumb": {
+      "find-a-doctor": "Finden Sie einen Arzt",
+      "dentist-in-egypt": "Ägypten"
+    },
+    "filters-menu": {
+      "title": "Filter",
+      "gender": {
+        "title": "Geschlecht",
+        "male": "Männlich",
+        "female": "Weiblich"
+      },
+      "seiority": {
+        "title": "Seiorität"
+      },
+      "service": {
+        "title": "Service"
+      },
+      "date": {
+        "title": "Datum",
+        "description": "Wählen Sie Datum"
+      },
+      "price": {
+        "title": "Preis",
+        "description": "Preisklasse",
+        "from": "Aus",
+        "to": "Zu"
+      },
+      "apply": "Anwenden"
+    },
+    "doctors-list": {
+      "title": "Ärzteliste",
+      "doctors": "Ärzte",
+      "sorting": {
+        "title": "Sortiere nach",
+        "most-popular": "Am beliebtesten",
+        "reviews": "Bewertungen",
+        "wating-time": "Wartezeit",
+        "fees": "Gebühren"
+      },
+      "most-popular-placeholder": "Am beliebtesten",
+      "no-results": {
+        "title": "Keine Ergebnisse",
+        "description": "Keine Ergebnisse gefunden"
+      },
+      "cards": {
+        "dr": "DR.",
+        "reviews": "Bewertungen",
+        "sub-specialization": "Subspezialisierung",
+        "address": "ِArea",
+        "waiting-time": "Wartezeit",
+        "fees": "Gebühren",
+        "book-now": "buchen Sie jetzt",
+        "service": "Service"
+      },
+      "load-more": "Mehr laden"
+    }
+  },
+  "blogs": {
+    "title": "Unser Blog",
+    "description": "Erweitern Sie Ihr Wissen, indem Sie Artikel mit diesem Blog lesen. ",
+    "search-placeholder": "Thema",
+    "button": "Suchen",
+    "recent-articles": "Aktuelle Artikel",
+    "all-articles": "Alle Artikel"
+  },
+  "about": {
+    "breadcrumb": {
+      "about": "Um"
+    },
+    "title": "Wir helfen Ihnen, immer besser zu werden",
+    "description": "Im Laufe der Jahre streben wir danach, die innovativsten Technologien zu entwickeln, die verwendet werden <br> von kleinen und mittelständischen Unternehmen",
+    "contact-button": "Kontaktiere uns",
+    "our-achievement": {
+      "title": "Unsere Leistung",
+      "cards": {
+        "clients": "Unsere Kunden sind über 17 Länder auf der ganzen Welt verteilt",
+        "thousand": "Wir haben 13.000 und mehr Kunden auf der ganzen Welt",
+        "feedback": "Gute Bewertungen und positives Feedback von unserem Kunden",
+        "experience": "Mehr als 3 Jahre Erfahrung, stellen Sie sicher, dass Sie sich für unsere Dienstleistungen entscheiden"
+      }
+    },
+    "achieve": {
+      "title": "Unternehmen zum Erfolg befähigen.",
+      "description": "Wir beliefern kleine Industrien, Organisationen und Institute der Hightech-Industrie mit modernen Komponenten."
+    },
+    "blogs": {
+      "title": "Lesen Sie unseren Blog",
+      "button": "Alle ansehen"
+    },
+    "review": {
+      "title": "Den Markt zu verstehen ist der Schlüssel zu erfolgreichem Business. ",
+      "name": "Alex - Geschäftsführer"
+    }
+  },
+  "contact-us": {
+    "breadcrumb": {
+      "contact-us": "Kontaktiere uns"
+    },
+    "title": "Kontaktiere uns",
+    "description": "Du hast eine Frage oder möchtest einfach nur Hallo sagen?  <br> von dir zu hören.",
+    "email": {
+      "label": "Email",
+      "description": "Senden Sie uns eine E-Mail, wenn Sie Hilfe zu einem aktuellen Produkt oder Service benötigen"
+    },
+    "call": {
+      "label": "Forderung",
+      "description": "Rufen Sie uns an, um mit einem Mitglied unseres Teams zu sprechen."
+    },
+    "help-support": {
+      "title": "Hilfe",
+      "description": "Schauen Sie sich hilfreiche Ressourcen, FAQs und Entwicklertools an.",
+      "button": "Hilfecenter"
+    }
+  },
+  "doctor-profile": {
+    "views": "Ansichten",
+    "specialized-in": "Spezialisiert auf",
+    "book-now": "buchen Sie jetzt",
+    "about-doctor": "Über Doktor",
+    "doctor-clinics": "Arzt Kliniken",
+    "you-can-book-now-at": "Sie können jetzt buchen unter",
+    "address": "ِArea",
+    "waiting-time": "Wartezeit",
+    "fees": "Gebühren",
+    "photos-of-clinic": "Fotos der Klinik",
+    "reviews": "Bewertungen",
+    "book-form": {
+      "title": "Buchungsinformation",
+      "description": "Buchen Sie jetzt, um die Adresse und Telefonnummer der Klinik zu erhalten",
+      "appointments-type": "Termintyp",
+      "appointments-type-required": "Der Termintyp ist erforderlich",
+      "choose-clinic": "Klinik wählen",
+      "clinic-required": "Klinik auswählen ist erforderlich",
+      "choose-appointment-day": "Wählen Sie Termintag",
+      "appointment-day-required": "Wählen Sie einen Termintag ist erforderlich",
+      "time-required": "Zeit ist erforderlich",
+      "appointments-available": "Termine verfügbar",
+      "no-appointments-available": "Für diesen Tag sind keine Termine verfügbar. ",
+      "book-online-pay-at-the-clinic": "Online buchen, in der Klinik bezahlen!",
+      "doctor-requires-reservation": "Arzt erfordert Reservierung!"
+    }
+  },
+  "change-password": {
+    "title": "Kennwort ändern"
+  },
+  "my-schedule": {
+    "title": "Mein Terminplan",
+    "upcoming": {
+      "title": "Bevorstehende",
+      "sub-title": "Alle bevorstehenden Termine"
+    },
+    "medical-history": {
+      "title": "Krankengeschichte",
+      "sub-title": "Krankengeschichte"
+    },
+    "canceled": {
+      "title": "Abgesagt",
+      "sub-title": "Stornierter Termin"
+    }
+  },
+  "profile": {
+    "steps": {
+      "personal-info": "Persönliche Informationen",
+      "location": "Standort",
+      "medical-state": "Medizinischer Zustand"
+    }
+  },
+  "timeout": {
+    "title": "Es ist eine Zeitüberschreitung aufgetreten",
+    "description": "Bitte versuchen Sie es später erneut oder kontaktieren Sie uns!",
+    "button": "Jetzt erneut versuchen!"
+  },
+  "booking-successfully": {
+    "title": "Ihre Buchung wurde erfolgreich übermittelt",
+    "notified": "Wir benachrichtigten Dr. {{doctorName}} Ihrer Buchung",
+    "examination-fees": "Prüfungsgebühren:",
+    "clinic-number": "Kliniknummer:",
+    "booking-details": {
+      "title": "Buchungsdetails",
+      "patient-name": "Patientenname",
+      "booking-date": "Buchungsdatum",
+      "doctor-name": "Name des Arztes",
+      "waiting-time": "Wartezeit",
+      "clinic-address": "Adresse der Klinik",
+      "add-additional-files": "Zusätzliche Dateien hinzufügen",
+      "my-appointments": "Meine Termine"
+    }
+  }
+}

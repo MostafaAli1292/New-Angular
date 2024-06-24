@@ -1,0 +1,178 @@
+
+<!--
+    "blogs":{
+    "title" : "Our Blog",
+    "description" : "Increase your knowledge by reading articles with this blog. Let’s start",
+    "search-placeholder" : "Topic",
+    "button" : "Search",
+    "recent-articles" : "Recent Articles",
+    "all-articles" : "All Articles"
+  }
+ -->
+ <section class="blogs" >
+  <div class="container">
+
+
+
+     <div class="form">
+      <div class="row " style="text-align: -webkit-center;">
+
+        <div class="container">
+          <div class="card">
+            <div class="card-body">
+              <br>
+              <form class="form"  [formGroup]="form" (ngSubmit)="formSubmit()" >
+                <div class="col-md-6">
+                  <div class="form-group" style="border: 1px solid #ced4da; border-radius: 0.375rem; padding: 8px;">
+                  <mat-select formControlName="SpecialistID"
+                   [placeholder]=  "('form.input.choose-your-speciality.label' | transloco)"
+                   [(value)]="Specialist.Selected"
+                   required
+                   >
+                    <mat-select-filter
+                    [placeholder]= "('form.input.choose-your-speciality.searchPlaceholder' | transloco)"
+                     [displayMember]="'Name'"
+                     [array]="Specialist.Data" (filteredReturn)="Specialist.Filtered = $event"
+                   ></mat-select-filter>
+                    <mat-option *ngFor="let item of Specialist.Filtered" [value]="item"  >
+                      {{item['Name']}}
+
+                     </mat-option>
+                  </mat-select>
+                  <div  *ngIf="submitted && f['speciality']['errors']" class="invalid-feedback" class="invalid-feedback" >
+                    <div      >
+                      <!-- Speciality is required -->
+                      {{ 'form.input.ask.validation.required' | transloco }}
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                <br>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label style="text-align: -webkit-center;">
+                      <!-- Full Name in English -->
+                      {{ 'form.input.ask.label' | transloco }}
+                    </label>
+                    <input type="text" class="form-control"
+                    placeholder= "{{ 'form.input.ask.placeholder' | transloco }}"
+                    formControlName="Question" [ngClass]="{ 'is-invalid': formSubmitted && f['Question']['errors'] }"  required>
+                  </div>
+                  <div  *ngIf="formSubmitted && f['Question']['errors']" class="errors-area mt-2" >
+                    <p class="text-danger"  *ngIf="f['Question']['errors']['required']"  >
+                      <!-- Full Name in English is required. -->
+                      {{ 'form.input.ask.validation.required' | transloco }}
+                    </p>
+                    <p class="text-danger"  *ngIf="f['Question']['errors']['pattern']"   >
+                      <!-- Full Name in English is invalid format please check it. -->
+                      {{ 'form.input.ask.validation.pattern' | transloco }}
+                    </p>
+                 </div>
+                </div>
+                <br>
+
+                <div class="col-md-6">
+                  <textarea matInput placeholder="{{ 'form.input.ask.desc' | transloco }}" formControlName="QDetails" [ngClass]="{ 'is-invalid': submitted && f['QDetails'].errors }" required></textarea>
+                  <div *ngIf="submitted && f['QDetails']['errors']" class="invalid-feedback">
+                    <div *ngIf="f['QDetails']['errors']['required']" >
+                      <!-- Bio in arabic is required -->
+                      {{ 'form.input.ask.desc-required' | transloco }}
+                    </div>
+                    <div *ngIf="f['QDetails']['errors']['pattern']">
+                      <!-- Arabic characters only -->
+                      {{ 'form.input.ask.validation.pattern' | transloco }}
+                    </div>
+                  </div>
+                </div>
+                <br>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label style="text-align: -webkit-center;">
+                      <!-- Full Name in English -->
+                      {{ 'form.input.ask.que' | transloco }}
+                    </label>
+                    <div class="radio-toolbar" >
+                      <input [value]="true" type="radio" id="radioApple" name="IsForMe"   checked formControlName="IsForMe">
+                      <label style="width: 200px;" for="radioApple">{{ 'form.input.ask.for-me' | transloco }}</label>
+
+                      <input [value]="false" type="radio" id="radioBanana" name="IsForMe" formControlName="IsForMe">
+                      <label style="width: 200px;" for="radioBanana">{{ 'form.input.ask.for-an' | transloco }}</label>
+
+
+                  </div>
+                  </div>
+
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label style="text-align: -webkit-center;">
+                      <!-- Full Name in English -->
+                      {{ 'form.input.ask.gender' | transloco }}
+                    </label>
+
+                    <div class="radio-toolbar" [ngClass]="{ 'is-invalid': formSubmitted && f['gender']['errors'] }">
+                      <input [value]="2" type="radio" id="radioApple2" name="GenderID"   checked formControlName="GenderID"  >
+                      <label style="width: 200px;" for="radioApple2">{{ 'form.input.ask.male' | transloco }}</label>
+
+                      <input [value]="1" type="radio" id="radioBanana2" name="GenderID"  formControlName="GenderID">
+                      <label style="width: 200px;" for="radioBanana2">{{ 'form.input.ask.female' | transloco }}</label>
+
+
+                  </div>
+                  </div>
+
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>
+                      <!-- Full Name in English -->
+                      {{ 'form.input.ask.age' | transloco }}
+                    </label>
+                    <input type="text" class="form-control"
+                    placeholder= "{{ 'form.input.ask.age-placeholder' | transloco }}"
+                    formControlName="Age" [ngClass]="{ 'is-invalid': formSubmitted && f['Question']['errors'] }" required >
+                  </div>
+                  <div *ngIf="formSubmitted && f['Question']['errors']" class="errors-area mt-2" >
+                    <p class="text-danger"  *ngIf="f['Question']['errors']['required']"  >
+                      <!-- Full Name in English is required. -->
+                      {{ 'form.input.ask.validation.required' | transloco }}
+                    </p>
+                    <p class="text-danger"  *ngIf="f['Question']['errors']['pattern']"   >
+                      <!-- Full Name in English is invalid format please check it. -->
+                      {{ 'form.input.ask.validation.pattern' | transloco }}
+                    </p>
+                 </div>
+                </div>
+
+
+                <br>
+                <div class="col-12">
+                  <button class="btn btn-primary large" type="submit" style="width: 200px;" [disabled]="form.invalid">{{ 'form.input.ask.save' | transloco }}</button>
+                </div>
+
+
+              </form>
+              <br>
+
+              <p style="font-weight: 400;
+              font-size: 12px;
+              line-height: 18px;
+               -webkit-box-align: center;
+              align-items: center;
+              color: rgb(102, 102, 102);
+              margin: 0px;"> {{ 'form.input.ask.text' | transloco }} <br> {{ 'form.input.ask.text-c' | transloco }}
+              </p>
+               <br>
+
+            </div>
+          </div>
+          <br>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

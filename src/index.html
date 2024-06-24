@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title> Salamtak Group | find a docotor near you. </title>
+  <!-- Salamtak | Find a doctor and book an appointment -->
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="theme-color" content="#2B2979">
+  <meta name="msapplication-navbutton-color" content="#2B2979">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2B2979">
+   <meta  name="description" content="Salamtak Group provides heath services including home visits, online doctor visits, doctor appointment reservations, clinic reservation and online medical advice.">
+
+  <meta name="google-site-verification" content="vF1VZpRp139OsNOritfihkL4V4m5myT7ZG3BfmS1UNA" />
+  <link rel="apple-touch-icon" href="assets/sm-logo.png">
+  <link rel="icon" href="assets/sm-logo.png">
+  <!-- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600;700&display=swap');
+ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
+
+  <!-- <link rel="manifest" href="manifest.json"> -->
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1048631166446439');
+  fbq('track', 'PageView');
+  fbq('track', 'CompleteRegistration');
+  fbq('track', 'Schedule');
+  fbq('track', 'SubmitApplication');
+  fbq('track', 'ViewContent');
+  fbq('track', 'Search');
+  </script>
+  <noscript>
+  <img height="1" width="1"
+  src="https://www.facebook.com/tr?id=251930597876461&ev=PageView
+  &noscript=1"/>
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11060102780"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11060102780');
+</script>
+ <script>
+    var onTouchStart = function(event) {
+      var el = event.target;
+      if (el.tagName.toLowerCase() === 'input') {
+        var curTop = el.scrollTop,
+            curSLeft = el.scrollLeft;
+        el.addEventListener('touchmove', function onTouchMove(event) {
+          if (el.scrollTop === curTop && el.scrollLeft === curSLeft) {
+            event.preventDefault();
+          }
+        }, {passive: false});
+        el.addEventListener('touchend', function onTouchEnd() {
+          el.removeEventListener('touchmove', onTouchMove, {passive: false});
+          el.removeEventListener('touchend', onTouchEnd, {passive: false});
+        }, {passive: false});
+      }
+    };
+    document.addEventListener('touchstart', onTouchStart, {passive: true});
+
+    jQuery(document).bind("cut copy contextmenu",function(e){
+      e.preventDefault();
+  });
+  console.log = function () {};
+  var unFocus = function () {
+    if (document.selection) {
+        document.selection.empty()
+    } else {
+        window.getSelection().removeAllRanges()
+    }
+
+}
+
+
+/* document.onmousemove = function () {
+    unFocus()
+}
+
+document.onmouseup = function () {
+    unFocus()
+} */
+
+
+/*document.onkeydown = function(e) {
+  if(event.keyCode == 123) {
+  return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+  return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+  return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+  return false;
+  }
+  }*/
+  </script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK28D1G3TF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MK28D1G3TF');
+</script>
+
+</head>
+<body oncontextmenu="return false">
+  <app-root></app-root>
+
+  <!-- <div id="mysitemapgenerator_loadcorsdata" data-token="4d9a1f3f6d37d8f6ab07970615c7a17f" data-domain="www.mysitemapgenerator.com"></div><script src="https://cdn.mysitemapgenerator.com/api/embedmap.m.js"></script> -->
+</body>
+</html>

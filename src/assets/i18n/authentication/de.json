@@ -1,0 +1,38 @@
+{
+  "forgot-password": {
+    "title": "Passwort vergessen",
+    "description": "Geben Sie Ihre E-Mail-Adresse oder Telefonnummer ein. Wir senden Ihnen einen Code zum Zurücksetzen des Passworts"
+  },
+  "login": {
+    "title": "Willkommen zurück!",
+    "description": "Salamtak-Website Es gibt Ihnen die Möglichkeit, die Daten von medizinischen Offenlegungen aller Art sowie Statistiken über Ihre Arbeit zu kontrollieren",
+    "remember-me": "Mich erinnern",
+    "forgot-password": "Passwort vergessen?",
+    "dont-have-an-account": "Sie haben kein Konto?",
+    "create-free-account": "Kostenlosen Account erstellen"
+  },
+  "new-password": {
+    "title": "Neues Kennwort"
+  },
+  "reset-successfully": {
+    "title": "Passwort erfolgreich zurückgesetzt",
+    "description": "Passwort erfolgreich zurückgesetzt"
+  },
+  "sign-up": {
+    "title": "Anmeldung",
+    "upload-your-photo": "Dein Foto hochladen",
+    "i-agree-to-the": "Ich stimme dem zu",
+    "terms-and-conditions": "Geschäftsbedingungen",
+    "terms-required": "Allgemeine Geschäftsbedingungen erforderlich",
+    "are-you-have-an-account": "Haben Sie ein Konto?",
+    "login": "Anmeldung",
+    "optional": "Optional"
+  },
+  "verification-code": {
+    "title-create-account": "Benutzerkonto erstellen",
+    "title-forgot-password": "Passwort vergessen",
+    "description": "Bitte geben Sie den Bestätigungscode ein, den Sie erhalten haben ",
+    "verification-code-will-be-sent-within": "Der Bestätigungscode wird innerhalb gesendet",
+    "resend-code": "Bestätigungscode nochmal versenden"
+  }
+}

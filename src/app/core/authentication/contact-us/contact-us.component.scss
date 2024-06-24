@@ -1,0 +1,31 @@
+section.help{
+  padding: 30px 20px;
+  h4{
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 10px;
+
+  }
+  a{
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 35px;
+    img.Calling{
+      animation: heart 1s infinite;
+      margin-right: 4px;
+      @keyframes heart {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}

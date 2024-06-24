@@ -1,0 +1,287 @@
+
+@import 'assets/styles/variables.scss';
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+
+html , body {
+  font-family: 'Poppins', 'Alexandria',sans-serif;
+  overflow-x: hidden !important;
+  scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background:  #F9F9F9 ;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2B2979;
+    border-radius: 4px;
+  }
+  section{
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    @keyframes fadeInAnimation {
+      0% {
+        // opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// global styles
+.black-filter{
+  filter: brightness(0%);
+}
+.toast-container{
+  position: fixed;
+}
+.ph-item{
+  border: none;
+  background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgb(154 154 154 / 10%);
+    border-radius: 6px;
+}
+.custom-radio-checkbox{
+  input[type=radio] {
+    display:none;
+    margin:10px;
+  }
+
+  /*
+  Change the look'n'feel of labels (which are adjacent to radiobuttons).
+  Add some margin, padding to label
+  */
+  input[type=radio] + label {
+    display:inline-block;
+    margin:-2px;
+    padding: 8px;
+    border-color: transparent;
+    background: #E8E8FD;
+    border-radius: 4px;
+    color: #2B2979;
+    // margin:  5px;
+    width: 100px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 11px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+  }
+  /*
+  Change background color for label next to checked radio button
+  to make it look like highlighted button
+  */
+  input[type=radio]:checked + label {
+  background-image: none;
+    background-color:#2B2979;
+    color: #fff;
+  }
+  /*
+  Hide radio button (the round disc)
+  we will use just the label to create pushbutton effect
+  */
+  input[type=checkbox] {
+    display:none;
+    margin:10px;
+  }
+
+  /*
+  Change the look'n'feel of labels (which are adjacent to radiobuttons).
+  Add some margin, padding to label
+  */
+  input[type=checkbox] + label {
+    display:inline-block;
+    margin:-2px;
+    padding: 4px 12px;
+    background-color: #e7e7e7;
+    border-color: #ddd;
+  }
+  /*
+  Change background color for label next to checked radio button
+  to make it look like highlighted button
+  */
+  input[type=checkbox]:checked + label {
+  background-image: none;
+    background-color:#d0d0d0;
+  }
+
+ }
+section.main-card-app{
+  .filter-tools{
+    margin-bottom: 30px;
+    .row{
+      align-items: center;
+    }
+    h4{
+      font-weight: 600;
+      font-size: 20px;
+      color: #00000099;
+      margin-bottom: 0;
+      span{
+        color: #00000066;
+        font-size: 14px;
+      }
+    }
+    a{
+      color: #00000099;
+      text-decoration: none;
+    }
+    input{
+      background: #FFFFFF;
+      border-radius: 6px;
+      color: #00000066;
+      padding: 10px 15px;
+      border: none;
+      margin-left: 10px;
+    }
+  }
+  .card{
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(154, 154, 154, 0.1);
+    border-radius: 6px;
+    border: none;
+    border: 1px solid transparent;
+    transition: .3s ease-in-out;
+    .user{
+      display: flex;
+      .image{
+        img{
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+        }
+      }
+
+      .info{
+        margin-left: 15px;
+        .name{
+          font-weight: 600;
+          font-size: 16px;
+          color: #000000;
+          margin-bottom: 5px;
+
+        }
+
+        .job{
+          font-size: 14px;
+          color: #8F949F;
+          margin-bottom: 5px;
+        }
+        .rate{
+          span{
+          color: #8F949F;
+            font-size: 11px;
+          }
+        }
+      }
+    }
+    .work-data{
+      margin-top: 20px;
+      .row{
+        margin-bottom: 14px;
+        align-items: center;
+      }
+      img{
+        margin-right: 7px;
+      }
+      span{
+        font-weight: 600;
+        font-size: 14px;
+        color: #000000;
+        margin-bottom: 5px;
+      }
+      .answer{
+        text-align: right;
+        // height: 35px;
+        // overflow-x: auto;
+        // &::-webkit-scrollbar {
+        //   width: 4px !important;
+        // }
+        // &::-webkit-scrollbar-thumb {
+        //   background: #000000;
+        //   border-radius: 4px;
+        // }
+
+        // width : 150px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+          p{
+            width: 100%;
+            overflow:hidden;
+            display:inline-block;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin: 0;
+            text-align: right;
+          }
+
+        span{
+
+          color: #8F949F;
+
+          // overflow three dots
+        }
+        //
+      }
+    }
+    button.book{
+      padding: 15px 60px;
+      border-radius: 4px;
+      font-size: 15px;
+      margin-top: 20px;
+    }
+    &:hover{
+      box-shadow: 0px 4px 4px rgba(154, 154, 154, 0.3);
+      border: 1px solid #2B2979;
+      // button.book{
+      //   background: #FFFFFF;
+      //   color: #2B2979;
+      // }
+    }
+  }
+  .pagination{
+    justify-content: center;
+    .page-item{
+      a{
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-size: 15px;
+        color: #000000;
+        font-weight: 600;
+        background: transparent;
+        margin: 5px;
+        &:hover{
+          background: #2B2979;
+          color: #FFFFFF;
+        }
+      }
+      &.control{
+        a{
+          border: none;
+          &:hover{
+            img{
+              filter: invert(1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.cut-text{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+
+}

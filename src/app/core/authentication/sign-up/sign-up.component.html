@@ -1,0 +1,225 @@
+<section class="auth layout_2 sign-up">
+  <div class="container">
+    <h2 class="mb-5">
+      <b>
+        {{ 'authentication.sign-up.title' | transloco }}
+      </b>
+    </h2>
+    <form  [formGroup]="form" (ngSubmit)="submit()">
+      <!-- <div class="user-image">
+        <div>
+          <input type="file" hidden #image (change)="hanedlFileInput($event)"
+
+          formControlName="image"
+          accept="image/*"
+          >
+          <img class="user"
+          src = "{{base64}}"
+          onerror="this.src='assets/fake-images-for-test/doc.png';">
+          <img class="camera" (click)="image.click()" src="assets/icons/camera.svg" alt="">
+        </div>
+        <p>
+          {{ 'authentication.sign-up.upload-your-photo' | transloco }}
+        </p>
+      </div> -->
+      <div class="row">
+        <div class="col">
+          <div class="mb-3">
+            <label for="FullNameEn" class="form-label" >
+              {{ 'form.input.full-name-en.label' | transloco }}
+            </label>
+            <input formControlName="FullNameEn" #FullNameEnInput [ngClass]="{ 'is-invalid': submitted && f['FullNameEn'].errors }" type="text" class="form-control" id="FullNameEn"         placeholder= "{{ 'form.input.full-name-en.placeholder' | transloco }}"
+            >
+            <div *ngIf="submitted && f['FullNameEn'].errors" class="errors-area mt-2">
+              <p class="text-danger" *ngIf="f['FullNameEn']['errors']['required']">
+                {{ 'form.input.full-name-en.validation.required' | transloco }}
+              </p>
+              <p class="text-danger" *ngIf="f['FullNameEn']['errors']['pattern']">
+                {{ 'form.input.full-name-en.validation.pattern' | transloco }}
+              </p>
+              <p class="text-danger" *ngIf="f['FullNameEn']['errors']['space']">
+                {{ 'form.input.full-name-en.validation.space' | transloco }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <!-- FullNameAr -->
+          <div class="mb-3">
+            <label for="FullNameAr" class="form-label">
+              {{ 'form.input.full-name-ar.label' | transloco }}
+            </label>
+            <input formControlName="FullNameAr" [ngClass]="{ 'is-invalid': submitted && f['FullNameAr'].errors }" type="text" class="form-control" id="FullNameAr" placeholder= "{{ 'form.input.full-name-ar.placeholder' | transloco }}">
+          </div>
+          <div *ngIf="submitted && f['FullNameAr'].errors" class="errors-area mt-2">
+            <p class="text-danger" *ngIf="f['FullNameAr']['errors']['required']">
+              {{ 'form.input.full-name-ar.validation.required' | transloco }}
+            </p>
+            <p class="text-danger" *ngIf="f['FullNameAr']['errors']['pattern']">
+              {{ 'form.input.full-name-ar.validation.pattern' | transloco }}
+            </p>
+            <p class="text-danger" *ngIf="f['FullNameAr']['errors']['space']">
+              {{ 'form.input.full-name-ar.validation.space' | transloco }}
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="mb-3">
+            <label for="Phone" class="form-label">
+              {{ 'form.input.phone.label' | transloco }}
+            </label>
+          <ngx-mat-intl-tel-input
+          #phone_number
+          [cssClass]="'ngx-mat-intl-tel-input'"
+          [enablePlaceholder]="true"
+          placeholder="Enter Number"
+          [enableSearch]="true"
+          searchPlaceholder="Search..."
+          [preferredCountries]="['eg']"
+          [onlyCountries]="[
+            CountryISO.SaudiArabia,
+            CountryISO.Egypt,
+            CountryISO.Bahrain,
+            CountryISO.Kuwait
+          ]"
+          name="Phone"
+          formControlName="Phone"
+        ></ngx-mat-intl-tel-input>
+        <div *ngIf="submitted && f['Phone'].errors" class="errors-area " style="margin-top: 4px !important ">
+          <p class="text-danger"  *ngIf="f['Phone']['errors']['required']">
+            {{ 'form.input.phone.validation.required' | transloco}}
+          </p>
+          <p class="text-danger"  *ngIf="f['Phone']['errors']['validatePhoneNumber']">
+            <!-- Phone is invalid format please check it. -->
+            {{ 'form.input.phone.validation.pattern' | transloco}}
+          </p>
+        </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-3">
+            <label for="Email" class="form-label">
+              {{ 'form.input.email.label' | transloco }}
+            </label>
+            <input formControlName="Email" [ngClass]="{ 'is-invalid': submitted && f['Email'].errors }" type="email" class="form-control" id="Email"  placeholder= "{{ 'form.input.email.placeholder' | transloco }}">
+          </div>
+          <div *ngIf="submitted && f['Email'].errors" class="errors-area mt-2" >
+            <p class="text-danger"  *ngIf="f['Email']['errors']['required']">
+              {{ 'form.input.email.validation.required' | transloco }}
+            </p>
+            <p class="text-danger"  *ngIf="f['Email']['errors']['email']">
+              {{ 'form.input.email.validation.pattern' | transloco }}
+            </p>
+         </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+            <div class="mb-3  password-area">
+              <label for="Password" class="form-label">
+                {{ 'form.input.password.label' | transloco }}
+              </label>
+              <input formControlName="Password" [ngClass]="{ 'is-invalid': submitted && f['Password'].errors }"
+              type= "{{hidePassword ? 'password' : 'text'}}"
+              class="form-control" id="password" placeholder= "{{ 'form.input.password.placeholder' | transloco }}">
+              <div class="visibility">
+                <div class="show">
+                  <i class="material-icons" (click)="showHidePassword()" *ngIf="hidePassword">visibility</i>
+                </div>
+                <div class="hide">
+                  <i class="material-icons active" (click)="showHidePassword()" *ngIf="!hidePassword">visibility_off</i>
+                </div>
+
+              </div>
+            </div>
+            <div *ngIf="submitted && f['Password'].errors" class="errors-area mt-2" >
+              <p class="text-danger"  *ngIf="f['Password']['errors']['required']">
+                {{ 'form.input.password.validation.required' | transloco }}
+              </p>
+              <p class="text-danger"  *ngIf="f['Password']['errors']['minlength']">
+                {{ 'form.input.password.validation.minlength' | transloco }}
+              </p>
+              <p class="text-danger"  *ngIf="f['Password']['errors']['pattern']">
+                {{ 'form.input.password.validation.minlength' | transloco }}
+              </p>
+            </div>
+        </div>
+        <div class="col">
+          <div class="mb-3 password-area">
+            <label for="ConfirmPassword" class="form-label">
+              {{ 'form.input.confirm-password.label' | transloco }}
+            </label>
+            <input formControlName="ConfirmPassword" [ngClass]="{ 'is-invalid': submitted && f['ConfirmPassword'].errors }" type= "{{hidePassword ? 'password' : 'text'}}" class="form-control" id="ConfirmPassword" placeholder= "{{ 'form.input.confirm-password.placeholder' | transloco }}">
+
+            <div class="visibility">
+              <div class="show">
+                <i class="material-icons" (click)="showHidePassword()" *ngIf="hidePassword">visibility</i>
+              </div>
+              <div class="hide">
+                <i class="material-icons active" (click)="showHidePassword()" *ngIf="!hidePassword">visibility_off</i>
+              </div>
+
+            </div>
+
+
+          </div>
+          <div *ngIf="submitted && f['ConfirmPassword'].errors" class="errors-area mt-2" >
+            <!-- {{f['ConfirmPassword']['errors'] | json}} -->
+            <p class="text-danger"  *ngIf="f['ConfirmPassword']['errors']['required']">
+              {{ 'form.input.confirm-password.validation.required' | transloco }}
+            </p>
+            <!-- mustMatch -->
+            <p class="text-danger"  *ngIf="f['ConfirmPassword']['errors']['mustMatch']">
+              {{ 'form.input.confirm-password.validation.notMatch' | transloco }}
+            </p>
+            <!-- minLength -->
+            <p class="text-danger"  *ngIf="f['ConfirmPassword']['errors']['minlength']">
+              {{ 'form.input.confirm-password.validation.minlength' | transloco }}
+            </p>
+            <!-- confirmPassword -->
+
+         </div>
+        </div>
+      </div>
+
+      <!-- I agree to the terms and conditions -->
+      <div class="mb-3 form-check">
+        <!-- <input formControlName="Terms" type="checkbox" class="form-check-input" id="Terms"> -->
+        <label class="form-check-label" for="Terms">
+          {{ 'authentication.sign-up.i-agree-to-the' | transloco }}
+
+           <a (click)="goto()"href="javascript:void(0)"  target="_blank"  class="text-info" aria-label="terms-and-conditions" style="font-size: large;">
+            {{ 'authentication.sign-up.terms-and-conditions' | transloco }}
+
+           </a></label>
+      </div>
+
+      <div *ngIf="submitted && f['Terms'].errors" class="errors-area mt-2" >
+        <p class="text-danger"  *ngIf="f['Terms']['errors']['required']">
+          {{ 'authentication.sign-up.terms-required' | transloco }}
+        </p>
+      </div>
+
+    <button type="submit" class="btn btn-primary"
+    >
+    {{ 'form.buttons.sign-up' | transloco }}
+
+    </button>
+    </form>
+
+    <!-- Are you have an account? Login -->
+    <div >
+      <p class="mt-1">
+        {{ 'authentication.sign-up.are-you-have-an-account' | transloco }}
+        <a [routerLink]="['/auth/login'] "href="javascript:void(0)" class="text-info" aria-label="login">
+          {{ 'authentication.sign-up.login' | transloco }}
+        </a></p>
+    </div>
+
+  </div>
+</section>
+
+

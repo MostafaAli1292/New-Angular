@@ -1,0 +1,595 @@
+<section class="main">
+  <div class="container">
+    <!-- <img src="assets/shapes/home-Vector-1.svg" class="vector vector-1" alt="home-Vector"> -->
+    <!-- <div class="content">
+         <h1 >
+          {{ 'home.main-section.title' | transloco }}
+          <span class="text-info">
+            {{ 'home.main-section.title-span' | transloco }}
+          </span>
+        </h1>
+        <h4>
+          {{ 'home.main-section.title-hid' | transloco }}
+          <br>
+          <span class="text-info">
+            {{ 'home.main-section.title-hidd' | transloco }}
+          </span>
+          <p class="text-info">
+            {{ 'home.main-section.title-hidspan' | transloco }}
+          </p>
+        </h4>
+     </div> -->
+     <div class="custom-content">
+      <h1 class="custom-heading">
+        {{ 'home.main-section.title' | transloco }}
+            <span class="text-info">
+         {{ 'home.main-section.title-span' | transloco }}
+        </span>
+      </h1>
+      <h4 class="custom-subheading">
+        <!-- {{ 'home.main-section.title-hid' | transloco }} -->
+                <br>
+        <span class="custom-subtitle">
+          {{ 'home.main-section.title-hidd' | transloco }}
+                </span>
+        <p class="custom-subtitle">
+          {{ 'home.main-section.title-hidspan' | transloco }}
+          <a href="tel:{{phone}}" class="btn btn-primary" style="background-color: transparent; border: none; color: #00D2CB;font-weight: bolder; font-size: x-large;">
+            <!-- <i class="fa fa-phone"></i> -->
+             {{phone}}
+          </a>
+        </p>
+      </h4>
+    </div>
+
+
+
+      <app-search-form></app-search-form>
+    </div>
+ </section>
+
+<!-- <section class="medical-services">
+  <div style="text-align: center; padding-bottom: 45px;">
+    <img src="https://salamtechapi.azurewebsites.net/images/large-logo2-color.svg" alt="" style="width: 300px;">
+</div>
+  <div class="container">
+
+    <p style="    margin-top: -40px; font-size: xx-large; font-weight: 500; color: #2c2979;">
+      {{'home.our-blog.sec-title' | transloco }}
+    </p>
+  </div>
+</section> -->
+<section class="services">
+  <div style="text-align: center;">
+    <img src="https://salamtechapi.azurewebsites.net/images/large-logo2-color.svg" alt="" style="width: 220px;">
+</div>
+  <div class="container">
+    <h2  data-aos="fade-up">
+      {{ 'home.services.title' | transloco }}
+    </h2>
+    <p data-aos-easing="ease-in-sine">
+      {{ 'home.services.description' | transloco }}
+
+    </p>
+    <p style="margin-top: -50px; font-size: medium;">
+      {{ 'home.services.th' | transloco }}
+
+    </p>
+
+
+    <div class="cards">
+      <div class="row" *ngIf="services.length == 0">
+        <div class="col mb-3" *ngFor="let item of [].constructor(5)">
+          <div class="ph-item">
+            <div class="ph-col-12">
+                <div class="ph-picture"></div>
+                <div class="ph-row">
+                    <div class="ph-col-6 big"></div>
+                    <div class="ph-col-4 empty big"></div>
+                    <div class="ph-col-2 big"></div>
+                    <div class="ph-col-4"></div>
+                    <div class="ph-col-8 empty"></div>
+                    <div class="ph-col-6"></div>
+                    <div class="ph-col-6 empty"></div>
+                    <div class="ph-col-12"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="services.length != 0">
+        <div class="col mb-3">
+          <div class="card" data-aos="fade-up">
+            <div class="card-body">
+              <div class="icon">
+                <img src="assets/poly.png" alt="Static Service icon">
+              </div>
+              <h5 class="title text-primary">
+                {{ 'home.services.cards.Poly' | transloco }}
+                 </h5>
+              <p class="description">
+                {{ 'home.services.cards.poly-Des' | transloco }}
+              </p>
+              <div class="text-center">
+                <a href="javascript:void(0)" class="btn btn-info text-white" aria-label="find-a-doctor" [routerLink]="['/patient/polyclinics']"
+             >
+                  {{ 'home.services.cards.button' | transloco }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-3" *ngFor="let service of services;let index = index">
+           <div class="card" [attr.data-aos]="index % 2 != 0 ? 'fade-up-left' : 'fade-up-right'">
+            <div class="card-body">
+                <div class="icon">
+                  <img src="{{storageUrl}}/{{service['Image']}}" alt="{{service['Name']}} icon">
+                </div>
+                <h5 class="title text-primary">
+                  {{service['Name']}}
+                </h5>
+                <p class="description">
+                  {{service['description']}}
+                 </p>
+                <div class="text-center">
+                  <a [routerLink]="['/patient/find-a-doctor']"
+                  [queryParams]="{MedicalExaminationTypeId: service['Id']}"
+                  href="javascript:void(0)" class="btn btn-info text-white" aria-label="find-a-doctor">
+                    {{ 'home.services.cards.button' | transloco }}
+                  </a>
+                </div>
+            </div>
+           </div>
+        </div>
+     </div>
+    </div>
+  </div>
+</section>
+ <section style="background-color:#F3F3FF ;">
+  <div style="text-align: center;">
+    <img src="https://salamtechapi.azurewebsites.net/images/large-logo2-color.svg" alt="" style="width: 220px;">
+</div>
+  <div class="container" style="text-align: center;">
+    <h1  data-aos="fade-up" style="color:#2c2979 ;">
+      {{ 'home.ask.tit' | transloco }}
+    </h1>
+    <p data-aos-easing="ease-in-sine" style="color: darkgrey;">
+      {{ 'home.ask.dis' | transloco }}
+    </p>
+    </div>
+    <br><br><br>
+  <table style="width: 100%;">
+    <tr>
+  <td rowSpan="2" style="width: 10%;">
+  <img src="assets/fake-images-for-test/Ask.png" style="width: 60%;">
+  </td>
+  <td style="vertical-align:bottom">
+  <p></p>
+  </td>
+  <td rowspan="2">
+    <button style="font-size: larger;" class="btn btn-primary" [routerLink]="['/patient/ask']">{{ 'home.ask.button' | transloco }}  </button>
+  </td>
+    </tr>
+    <tr>
+  <td style="vertical-align:top">
+    <p style="font-size: larger; color: #2c2979; margin-left: -50px;">{{ 'home.ask.title-span' | transloco }}</p>
+  </td>
+    </tr>
+  </table>
+  </section>
+<section class="medical-services">
+  <div style="text-align: center;">
+    <img src="https://salamtechapi.azurewebsites.net/images/large-logo2-color.svg" alt="" style="width: 220px;">
+</div>
+  <div class="container">
+    <h2  data-aos="fade-up">
+      {{ 'home.medical-services-directory.title' | transloco }}
+    </h2>
+    <p data-aos-easing="ease-in-sine">
+      {{ 'home.medical-services-directory.description' | transloco }}
+    </p>
+
+
+    <div class="cards">
+      <div class="row">
+        <div class="col" *ngFor="let service of medicalServices;let index = index">
+          <div class="card" style="cursor: pointer;"
+            [routerLink]="[service.url]"
+
+          >
+            <div class="overlay" [style.background-color]="service.hex"></div>
+            <div class="card-body" [style.background-color]="service.hex">
+              <img src="{{service.icon}}" alt="" width="100%" >
+            </div>
+            <div class="card-footer">
+                {{ 'home.medical-services-directory.cards.' + service.translate | transloco }}
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trusted by many people -->
+<section class="trusted">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <h1 style="text-align: center;
+            font-family: sans-serif;
+            font-weight: bolder;" >
+              {{ 'home.trusted.title' | transloco }}
+            </h1>
+
+            <h1 style="text-align: center;
+            font-family: sans-serif;
+            font-weight: 900;">
+
+              {{ 'home.trusted.description' | transloco }}
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="sliders">
+          <img class="shape shape_1" src="assets/shapes/green-circle.svg" alt="shape_11">
+          <img class="shape shape_2" src="assets/shapes/blue-circle.svg" alt="shape_2">
+          <img class="shape shape_3" src="assets/shapes/yello-circle.svg" alt="shape_3">
+
+          <div class="row">
+            <div class="col-4">
+              <img src="assets/fake-images-for-test/home-avatars/1.jpg" width="100%"data-aos="fade-up" data-aos-offset="0" alt="Image">
+              <img src="assets/fake-images-for-test/home-avatars/2.jpg" width="100%"data-aos="fade-up" data-aos-offset="400" alt="Image">
+            </div>
+            <div class="col-4 position-relative">
+              <img src="assets/fake-images-for-test/home-avatars/2.jpg" width="100%" data-aos="fade-up" data-aos-offset="0" alt="Image3">
+              <img src="assets/fake-images-for-test/home-avatars/4.jpg" width="100%" data-aos="fade-up" data-aos-offset="200" alt="Image4">
+              <img src="assets/fake-images-for-test/home-avatars/14.jpg"  width="100%"data-aos="fade-up" data-aos-offset="400" alt="Image5">
+            </div>
+            <div class="col-4">
+              <img src="assets/fake-images-for-test/home-avatars/12.jpg"  width="100%"data-aos="fade-up" data-aos-offset="0" alt="Image6">
+              <img src="assets/fake-images-for-test/home-avatars/11.jpg" width="100%" data-aos="fade-up" data-aos-offset="400" alt="Image7">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Popular Doctors -->
+<!-- <section class="popular-doctors" *ngIf="popularDoctors.length != 0">
+  <div class="container">
+    <h2  data-aos="fade-up">
+      {{ 'home.popular-doctors.title' | transloco }}
+    </h2>
+    <div class="cards mt-5">
+      <div class="row">
+        <div class="col-lg-3 mb-4" *ngFor="let doctor of popularDoctors">
+          <div class="card" [routerLink]="['/patient/doctor-profile',doctor['DoctorId']]">
+            <div class="card-body">
+              <div class="image">
+                <img class="user" src="{{storageUrl}}/{{doctor['DoctorImage']}}" alt="doc-home">
+              </div>
+              <h5 class="name mt-3">
+                {{doctor['DoctorName']}}
+              </h5>
+              <p class="job text-secondary">
+                {{doctor['DoctorSpec']}}
+              </p>
+              <div class="rate">
+                <img src="assets/icons/Star2.svg" alt="Star">  &nbsp;
+                <b>{{doctor['Rate'] | number:'1.1-1'}}
+
+                </b> &nbsp;<span class="text-secondary">
+                  ({{doctor['reviewsCount'] || 0}}Reviews)</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a [routerLink]="['/patient/find-a-doctor']" href="javascript:void(0)" aria-label="see-all" class="btn btn-info text-white see-all">
+        {{ 'home.popular-doctors.see-all' | transloco }}
+      </a>
+    </div>
+  </div>
+</section> -->
+
+<!-- Top Specialties -->
+<!-- <section class="top-specialties">
+  <div class="container">
+    <h2  data-aos="fade-up">
+      {{ 'home.top-specialties.title' | transloco }}
+    </h2>
+    <div class="cards mt-5" dir="ltr">
+      <owl-carousel-o [options]="specialtiesOwlOptions">
+        <ng-template carouselSlide  *ngFor="let special of specialties">
+          <div class="card">
+            <div class="card-body">
+              <img src="{{storageUrl}}/{{special['ImageURL']}}" alt="special">
+            </div>
+            <div class="card-footer">
+              {{special['Title']}}
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section> -->
+
+<section class="popular-doctors">
+  <div class="row">
+    <div class="col-md-6 d-flex">
+      <div class="row flex-fill">
+        <div class="col-md-12 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="icon" style="text-align: center; padding-bottom: 35px;">
+                <img src="https://salamtechapi.azurewebsites.net/images/large-logo2-color.svg">
+              </div>
+              <h5 class="title text-primary " >
+                {{ 'home.news.first-title' | transloco }}
+
+              </h5>
+              <p class="description">
+                {{ 'home.news.first-des' | transloco }}
+            </p>
+           </div>          </div>
+        </div>
+        <div class="col-md-12 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="icon" style="text-align: center;padding-bottom: 35px;">
+                <img src="https://salamtechapi.azurewebsites.net/images/large-logo2-color.svg">
+              </div>
+              <h5 class="title text-primary">
+                {{ 'home.news.second-title' | transloco }}
+
+              </h5>
+              <p class="description">
+                {{ 'home.news.second-des' | transloco }}
+              </p>
+
+          </div>          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 d-flex">
+      <div class="row flex-fill">
+        <div class="col-md-12 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="icon" style="text-align: center; padding-bottom: 35px;">
+                <img src="https://salamtechapi.azurewebsites.net/images/large-logo2-color.svg">
+              </div>
+              <h5 class="title text-primary">
+                {{ 'home.news.third-title' | transloco }}
+              </h5>
+              <p class="description">
+                {{ 'home.news.third-des' | transloco }}
+
+            </p>
+
+          </div>          </div>
+        </div>
+        <div class="col-md-12 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="icon" style="text-align: center; padding-bottom: 35px;">
+                <img src="https://salamtechapi.azurewebsites.net/images/large-logo2-color.svg">
+              </div>
+              <h5 class="title text-primary">
+                {{ 'home.news.four-title' | transloco }}
+              </h5>
+              <p class="description">
+                {{ 'home.news.four-des' | transloco }}
+              </p>
+
+          </div>          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="what-people-say">
+  <div style="text-align: center;">
+    <img src="https://salamtechapi.azurewebsites.net/images/large-logo2-color.svg" alt="" style="width: 220px;">
+</div>
+  <div class="container">
+    <!-- <p>
+      {{ 'home.what-people-say.small' | transloco }}
+    </p> -->
+    <h2 data-aos="fade-up">
+      {{ 'home.what-people-say.big' | transloco }}
+    </h2>
+    <div class="cards mt-5" dir="ltr">
+      <!-- There is no api to display the data -->
+      <div class="no-results" >
+        <div class="card text-center bg-transparent">
+          <div class="card-body">
+            <img src="assets/icons/no-results.svg" alt="no-results">
+            <h5 class="mt-3">
+              {{ 'find-a-doctor.doctors-list.no-results.title' | transloco }}
+            </h5>
+            <p>
+              {{ 'find-a-doctor.doctors-list.no-results.description' | transloco }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <br>
+       <div style="text-align: center;">
+        <img src="https://salamtechapi.azurewebsites.net/images/large-logo2-color.svg" alt="" style="width: 220px;">
+    </div>
+      <h2 data-aos="fade-up">
+        {{ 'home.what-people-say.offer' | transloco }}
+      </h2>
+      <p data-aos-easing="ease-in-sine">
+        {{ 'home.what-people-say.offerh' | transloco }}
+      </p>
+       <owl-carousel-o [options]="testimonialsOwlOptions">
+        <ng-template carouselSlide  *ngFor="let testimonial of offers">
+          <div class="card"  (click)="navigateToOffer(testimonial.id)"
+          >
+            <div class="card-body">
+                <img class="" src="{{storageUrl}}{{testimonial.image}}" alt="Star" width="100%" height="100%">
+            </div>
+            <div class="user">
+              <h5 class="name">
+                <!-- {{testimonial.userName}} -->
+                {{testimonial.Name}}
+                <!-- {{ 'home.our-blog.' + testimonial.translate | transloco }} -->
+
+                <!-- {{'home.our-blog.description' | transloco }} -->
+
+              </h5>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="medical-services">
+  <div style="text-align: center; ">
+    <img src="assets/icons/SalmtakGate.png"  style="cursor: pointer; width: 400px;" >
+  </div>
+  <div class="container">
+
+    <p style="    margin-top: -40px; font-size: large;">
+      {{'home.our-blog.description' | transloco }}
+    </p>
+
+
+    <div class="cards">
+      <div class="row" style="align-items:center">
+        <div class="col-4" *ngFor="let service of blog;" >
+          <div class="card" style="cursor: pointer;"
+          [routerLink]="[service.url]"
+          >
+            <div class="overlay" [style.background-color]="service.hex"></div>
+            <div class="card-body" [style.background-color]="service.hex">
+              <img class="card-img" src="{{service.icon}}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <section class="what-people-say">
+  <div class="container">
+    <div style="text-align: center;">
+      <img src="assets/icons/Salmtak Gate.png" width="25%">
+    </div>
+    <p>
+      {{ 'home.our-blog.description' | transloco }}
+    </p>
+    <div class="cards">
+      <div class="row">
+        <div class="col" *ngFor="let service of blog;">
+
+            <div class="overlay" [style.background-color]="service.hex"></div>
+            <div class="card-body" [style.background-color]="service.hex">
+              <img class="card-img" src="{{service.icon}}" alt="">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- Our Blog -->
+<!-- <section class="blog">
+  <div class="container">
+
+    <div style="text-align: center;">
+      <img src="assets/icons/Salmtak Gate.png" width="25%">
+    </div>
+    <p>
+      {{ 'home.our-blog.description' | transloco }}
+    </p>
+    <div class="cards mt-5">
+        <div class="row">
+          <div class="col-lg-4 mb-4" *ngFor="let item of testimonials">
+
+            <div class="card" style="max-width: 400px;">
+              <div class="card-body">
+                 <img class="card-img" src= "{{item.userImage}}"  alt="blog">
+                <div class="texts">
+                  <h4>
+                    {{item.userName}}
+                  </h4>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a [routerLink]="['/patient/blogs']" href="javascript:void(0)" aria-label="see-all-blogs" class="btn btn-info text-white see-all">
+            {{ 'home.our-blog.see-all' | transloco }}
+          </a>
+        </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+
+<!-- download -->
+<section class="download">
+  <div class="container">
+    <div class="content">
+      <h2>Download Our App</h2>
+      <!-- <div class="download-buttons mt-5 mb-5">
+        <a href="#">
+          <img src="assets/background/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917 1.png" alt="Download from App Store">
+        </a>
+        <a href="#">
+          <img src="assets/background/google-play-badge-1.png" alt="Download from Google Play">
+        </a>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+

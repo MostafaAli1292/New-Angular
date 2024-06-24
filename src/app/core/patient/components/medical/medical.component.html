@@ -1,0 +1,132 @@
+
+ <section class="medical-history-2" style="margin: 20px;">
+
+  <section class="form" *ngIf="!showAddButton">
+ <div>
+  <h3>
+    <b>
+      <!-- Diagnosis -->
+      {{'medical-history.Diagnosis' | transloco}}
+    </b>
+  </h3>
+  <div class="form-group">
+    <textarea class="form-control mt-2" rows="3" value="{{EmrDetails.Instructions}}" disabled></textarea>
+
+
+
+  <!-- <button class="btn btn-primary mt-2" (click)="addInstruction(instruction)">
+    Save
+  </button> -->
+  </div>
+
+
+ </div>
+
+
+  <div>
+    <h3>
+      <b>
+        <!-- Medications -->
+        {{'medical-history.Medications' | transloco}}
+      </b>
+    </h3>
+    <!-- class="descriptions" -->
+    <div
+      *ngIf="EmrDetails && EmrDetails.PatientEmrdetails.length > 0"
+    >
+
+    <div *ngFor="let item of EmrDetails.PatientEmrdetails" class="mb-4">
+      <div class="form-group mb-2">
+        <!-- Delete.svg -->
+        <div class="d-flex align-content-center">
+          <input type="text" class="form-control" value="{{item.Title}}" disabled>
+
+        </div>
+        <textarea class="form-control mt-2" rows="3" value="{{item.Description}}" disabled></textarea>
+      </div>
+    </div>
+      <!-- <div class="row m-0  ">
+        <div class="col-lg-12" *ngFor="let item of EmrDetails['PatientEmrdetails']">
+          <div class="card mb-2 border-primary">
+          <div class="card-body">
+            <h6 class="m-0">
+              {{item.Title}}
+            </h6>
+            <p class="m-0">
+              {{item.Description}}
+            </p>
+          </div>
+        </div>
+        </div>
+      </div> -->
+    </div>
+
+
+    <!-- <div>
+      <button
+      class="btn btn-primary mt-3 addRx"
+      (click)="addRx(rxTitle, rxDescription)"
+      >
+      Save
+    </button>
+    </div> -->
+  </div>
+
+  <div class="row mt-4">
+    <!-- col-lg-6 -->
+    <div class="col-lg-6"
+
+      *ngIf="EmrDetails && EmrDetails['PatientEmrdocuments'].length > 0"
+    >
+      <h3 class="mt-0">
+        <!-- Attachments -->
+        {{'medical-history.Attachments' | transloco}}
+      </h3>
+      <div class="card files"
+        *ngIf="EmrDetails && EmrDetails['PatientEmrdocuments'].length > 0"
+      >
+        <div class="card-body">
+          <ul class="p-0 list-unstyled mb-0">
+            <li *ngFor="let file of EmrDetails['PatientEmrdocuments']">
+              <div class="row align-items-center">
+                <!-- <div class="col-1">
+                  <img src="assets/icons/file.png" alt="">
+                </div> -->
+                <div class="col-9">
+
+                  <img  src="{{storageUrl}}/{{file.DocumentUrl}}" alt="">
+
+                </div>
+                <div class="col-2">
+                  <a href="{{storageUrl}}{{file.DocumentUrl}}" target="_blank" download="">
+                   </a>
+
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- <div class="card files no-data m-0">
+        <div class="card-body">
+          <img src="assets/icons/no-data.svg" alt="">
+          <h6 class="mt-3 text-center">
+            there is no data to show !
+          </h6>
+        </div>
+      </div> -->
+    </div>
+    <!-- col-lg-6 -->
+
+
+  </div>
+
+
+
+  </section>
+</section>
+    <!-- <div class="input-group mb-2" >
+      <input type="text" class="form-control" placeholder="Write of Instructions" [(ngModel)]="instruction" (keyup.enter)="addInstruction(instruction)">
+      <button class="btn btn-danger" (click)="addInstruction(instruction)" [attr.disabled]="!instruction || instruction.length < 1 ? true : null" >-</button>
+     </div> -->
+

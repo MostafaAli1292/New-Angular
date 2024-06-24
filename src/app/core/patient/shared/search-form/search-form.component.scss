@@ -1,0 +1,116 @@
+.search-form{
+
+
+  form{
+
+    width: 100%;
+    margin-top: 120px;
+    h4{
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      text-align: left;
+      margin-bottom: 15px;
+    }
+    .main{
+      display: flex;
+      $height : 80px;
+      $radius : 10px;
+
+      &>div{
+
+        mat-select,input{
+          background: #fff;
+          border: none;
+          border-radius: 0;
+          padding: 10px;
+          width: 100%;
+          height: $height;
+          display: flex;
+          align-items: center;
+
+          font-weight: 600;
+
+        }
+        // input placeholder
+        input::-webkit-input-placeholder {
+          color: #2B297999;
+          font-weight: 600;
+        }
+        mat-select{
+          border-right: 1px solid #F9F9F9;
+          .mat-mdc-select-placeholder{
+            color: #2B297999 ;
+            padding-left: 10px;
+            font-weight: 600;
+          }
+        }
+        button{
+          height: $height;
+          border-radius: 0 $radius $radius 0;
+        }
+        &:nth-child(1){
+          mat-select{
+            border-radius: $radius 0 0 $radius !important;
+          }
+          overflow: hidden;
+        }
+        &:nth-child(1), &:nth-child(2), &:nth-child(3){
+          width: 20%;
+        }
+        &:nth-child(4){
+          width: 35%;
+        }
+
+      }
+      // form mobile
+      @media (max-width: 772px){
+        flex-direction: row;
+        flex-wrap: wrap;
+          &>div{
+        //   mat-select,input{
+        //     height: $height - 30;
+        //     border-radius: $radius !important;
+        //   }
+          &:nth-child(1), &:nth-child(2), &:nth-child(3){
+            width: 33.33333333333333% !important;
+          }
+          &:nth-child(4){
+            width: 100% !important;
+          }
+          &:nth-child(3){
+            mat-select{
+              border-radius: 0 $radius $radius 0 !important;
+            }
+          }
+          &:nth-child(5){
+            width: 100%;
+            button{
+              border-radius: $radius ;
+              width: 100%;
+            }
+          }
+          input{
+            border-radius: $radius !important;
+          }
+
+        }
+      }
+
+    }
+    @media (max-width: 772px){
+      margin-top: 50px ;
+
+      h4{
+        margin-top: 20px;
+        margin-bottom: 5px;
+      }
+    }
+    // .input-group{
+    //   // justify-content: space-between;
+    //   div{
+    //     // width:100%
+    //   }
+    // }
+  }
+}

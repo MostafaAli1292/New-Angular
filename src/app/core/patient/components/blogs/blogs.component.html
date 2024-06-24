@@ -1,0 +1,108 @@
+<!--
+<section class="blogs">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="javascript:void(0)">
+           {{'app-name' | transloco}}
+        </a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">
+          {{'blogs.title' | transloco}}
+        </a></li>
+      </ol>
+    </nav>
+
+    <div class="text-center mb-5 head">
+      <h1>
+        {{'blogs.title' | transloco}}
+      </h1>
+      <p>
+        {{'blogs.description' | transloco}}
+      </p>
+    </div>
+
+
+    <div class="cards mt-5">
+
+      <h5>
+         {{'blogs.all-articles' | transloco}}
+      </h5>
+      <div>
+         <div class="row">
+          <div class="col-lg-6 mb-4" *ngFor="let item of blogs">
+             <div class="card"
+            [style.background-image]="'url(' + storageUrl + '/' + item.image + ')'"
+
+            >
+              <div class="card-body">
+                <div class="texts">
+                  <h4>
+                    {{item.Title}}
+                  </h4>
+                  <p>
+                     {{item.Description | slice:0:100}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- <div style="text-align: center; ">
+  <img src="assets/icons/SalmtakGate.png" width="25%" style="cursor: pointer;" >
+</div>
+<section class="medical-services">
+  <div class="container">
+    <p>
+      {{ 'home.our-blog.description' | transloco }}
+    </p>
+    <div class="cards">
+      <div class="row">
+        <div class="col-4" *ngFor="let service of blog;">
+          <div class="card" style="cursor: pointer;"
+          [routerLink]="[service.url]"
+          >
+            <div class="overlay" [style.background-color]="service.hex"></div>
+            <div class="card-body" [style.background-color]="service.hex">
+              <img class="card-img" src="{{service.icon}}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+<section class="medical-services">
+  <div style="text-align: center; ">
+    <img src="assets/icons/SalmtakGate.png"  style="cursor: pointer; width: 400px;" >
+  </div>
+  <div class="container">
+
+    <p style="    margin-top: -40px; font-size: large;">
+      {{'home.our-blog.description' | transloco }}
+    </p>
+
+
+    <div class="cards">
+      <div class="row" style="align-items:center">
+        <div class="col-4" *ngFor="let service of blog;" >
+          <div class="card" style="cursor: pointer;"
+          [routerLink]="[service.url]" [state]="{ id: service.id }"
+          >
+            <div class="overlay" [style.background-color]="service.hex"></div>
+            <div class="card-body" [style.background-color]="service.hex">
+              <img class="card-img" src="{{service.icon}}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

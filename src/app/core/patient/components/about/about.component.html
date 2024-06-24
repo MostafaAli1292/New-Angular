@@ -1,0 +1,239 @@
+
+ <iframe class="w-100" height="1000"
+  src="https://korashigroup.com/"
+ ></iframe>
+<div class="d-none">
+  <section >
+    <div class="container">
+      <nav class="breadcrumb" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="javascript:void(0)">
+            <!-- Home -->
+            {{'app-name' | transloco}}
+          </a></li>
+          <li class="breadcrumb-item"><a href="javascript:void(0)">
+            {{'about.breadcrumb.about' | transloco}}
+          </a></li>
+        </ol>
+      </nav>
+
+      <div class="text-center mb-5 head">
+        <h2>
+          <!-- We help you to get better always -->
+          {{'about.title' | transloco}}
+        </h2>
+        <p class="text-secondary-dark mt-3" [innerHTML]="'about.description' | transloco">
+          <!-- {{'about.description' | transloco}} -->
+          <!-- Over the years we strive to create the most innovative technologies used
+          <br>
+          by small and medium-sized companies -->
+        </p>
+        <button [routerLink]="['/patient/contact-us']" class="btn btn-info p-3 text-white">
+          <!-- Contact us -->
+          {{'about.contact-button' | transloco}}
+        </button>
+      </div>
+
+
+    </div>
+  </section>
+  <section class="our-achievement">
+    <div class="container position-relative">
+          <img class="shape " src="assets/shapes/Titik-titik.svg" alt="">
+          <img class="circle-shape" src="assets/shapes/our-achievement-circle.svg" alt="">
+          <h2 class="text-center">
+            <!-- Our Achievement -->
+            {{'about.our-achievement.title' | transloco}}
+          </h2>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <div>
+                  <div>
+                    <div class="text-center">
+                      <img src="assets/icons/our-achievement-1.svg" alt="">
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <div class="text-center">
+                      <h4>
+                        13K
+                      </h4>
+                      <p class="text-secondary-dark">
+                        <!-- We have 13 thousand and more client around the world -->
+                        {{'about.our-achievement.cards.thousand' | transloco}}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <div>
+                  <div>
+                    <div class="text-center">
+                      <img src="assets/icons/our-achievement-2.svg" alt="">
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <div class="text-center">
+                      <h4>
+                        17
+                      </h4>
+                      <p class="text-secondary-dark">
+                        <!-- Our clients are spread over 17 countries around the world -->
+                        {{'about.our-achievement.cards.clients' | transloco}}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <div>
+                  <div>
+                    <div class="text-center">
+                      <img src="assets/icons/our-achievement-3.svg" alt="">
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <div class="text-center">
+                      <h4>
+                        3+
+                      </h4>
+                      <p class="text-secondary-dark">
+                        <!-- More than 3 years experience, make sure you choose our services -->
+                        {{'about.our-achievement.cards.experience' | transloco}}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <div>
+                  <div>
+                    <div class="text-center">
+                      <img src="assets/icons/our-achievement-4.svg" alt="">
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <div class="text-center">
+                      <h4>
+                        99%
+                      </h4>
+                      <p class="text-secondary-dark">
+                        <!-- Good reviews and positive feedback from our client -->
+                        {{'about.our-achievement.cards.feedback' | transloco}}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </section>
+  <section class="achieve">
+    <!-- Empower business to achieve success. -->
+    <!--
+      "achieve":{
+        "title": "Empower business to achieve success.",
+        "description": "We provide small industries, organizations and institutes of high-tech industries with modern components."
+      }
+      -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1>
+            <!-- Empower business to achieve success. -->
+            {{'about.achieve.title' | transloco}}
+          </h1>
+          <p class="text-secondary-dark mt-3">
+            <!-- We provide small industries, organizations and institutes of high-tech industries with modern components. -->
+            {{'about.achieve.description' | transloco}}
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <img src="assets/background/about.svg" class="w-100">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="blogs">
+    <!--
+       "blogs":{
+        "title" : "Read our blog",
+        "button" : "View all"
+      }
+     -->
+    <div class="container">
+      <div class="row">
+        <div class="col-auto">
+          <h4 class="m-0">
+            <!-- Read our blog -->
+            {{'about.blogs.title' | transloco}}
+          </h4>
+        </div>
+        <div class="col text-end">
+          <a href="javascript:void(0)" class="text-info">
+            <!-- View all -->
+            {{'about.blogs.button' | transloco}}
+          </a>
+        </div>
+      </div>
+      <div class="cards mt-3">
+        <div class="row">
+          <div class="col-lg-4 mb-4" *ngFor="let item of [].constructor(3)">
+            <div class="card recent" style="background-image: url('/assets/background/Rectangle92.jpg')">
+              <div class="card-body">
+                <div class="texts">
+                  <h4>
+                    The world is not only #000000 and #FFFFFF
+                  </h4>
+                  <p>
+                    Aug 2, 2021 · 5 min read
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="testimonials">
+    <!--
+        "review":{
+        "title" : "Understanding the market is the key to successful business. It is very important for us to understand how to deliver the best products to the customer.",
+        "name" : "Alex - CEO"
+      }
+     -->
+    <div class="container">
+      <h1>
+        <span class="symbol">“</span>
+
+      <!-- Understanding the market is the key to successful business. It is very important for us to understand how to deliver the best products to the customer. -->
+      {{'about.review.title' | transloco}}
+      </h1>
+      <p>
+        <!-- Alex - CEO -->
+        {{'about.review.name' | transloco}}
+      </p>
+
+    </div>
+  </section>
+
+</div>

@@ -1,0 +1,37 @@
+User-agent: Googlebot
+Allow: /
+Disallow: *?&*
+Disallow: *?*
+allow: *?teleHealth*
+
+User-agent: SiteAnalyzerBot
+Allow: /
+Disallow: *?&*
+Disallow: *?*
+allow: *?teleHealth*
+
+User-agent: AdsBot-Google
+Allow: /
+allow: *?teleHealth*
+
+User-agent: Bingbot
+Allow: /
+allow: *?teleHealth*
+
+User-agent: Bingbot
+Allow: /
+Disallow: *?*
+
+User-agent: Screaming Frog SEO Spider
+Allow: /
+
+User-agent: deepcrawl
+Allow: /
+Disallow:*?*
+
+User-agent: *
+Disallow: /
+
+
+Sitemap:https://salamtakgroup.com/sitemap.xml
+

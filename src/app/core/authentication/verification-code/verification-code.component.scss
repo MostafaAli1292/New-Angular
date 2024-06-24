@@ -1,0 +1,34 @@
+
+section.verification-code{
+  header{
+    margin-top: 150px;
+    h1{
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      // font-family: 'AvenirLTStd-Black', 'Poppins', sans-serif;
+    }
+    p{
+      color: #B7B7B7;
+      span{
+        color: #000000;
+      }
+    }
+  }
+  p.time{
+    font-weight: 600;
+  }
+}
+code-input{
+  span{
+    margin: 0 5px !important;
+  }
+  input{
+    background: #fff !important;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.03);
+    border: none !important;
+    margin-bottom: 20px;
+    border-radius: 6px !important;
+    font-weight: 600;
+    // font-size: 20px;
+  }
+}

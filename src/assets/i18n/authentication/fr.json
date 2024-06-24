@@ -1,0 +1,38 @@
+{
+  "forgot-password": {
+    "title": "Mot de passe oublié",
+    "description": "Entrez votre email ou téléphone ou numéro de téléphone nous vous enverrons un code pour réinitialiser le mot de passe"
+  },
+  "login": {
+    "title": "Content de te revoir!",
+    "description": "Site Salamtak Il vous donne la possibilité de contrôler les dates des divulgations médicales de toutes sortes ainsi que des statistiques sur votre travail",
+    "remember-me": "Souviens-toi de moi",
+    "forgot-password": "Mot de passe oublié?",
+    "dont-have-an-account": "Vous n'avez pas de compte ?",
+    "create-free-account": "Créer un compte gratuitement"
+  },
+  "new-password": {
+    "title": "nouveau mot de passe"
+  },
+  "reset-successfully": {
+    "title": "Mot de passe réinitialisé avec succès",
+    "description": "Mot de passe réinitialisé avec succès"
+  },
+  "sign-up": {
+    "title": "S'inscrire",
+    "upload-your-photo": "Télécharger votre photo",
+    "i-agree-to-the": "je suis d'accord avec le",
+    "terms-and-conditions": "Termes et conditions",
+    "terms-required": "Termes et conditions est requis",
+    "are-you-have-an-account": "Avez-vous un compte?",
+    "login": "Connexion",
+    "optional": "Facultatif"
+  },
+  "verification-code": {
+    "title-create-account": "Créer un compte",
+    "title-forgot-password": "Mot de passe oublié",
+    "description": "Veuillez entrer le code de vérification que vous avez reçu de ",
+    "verification-code-will-be-sent-within": "Le code de vérification sera envoyé dans",
+    "resend-code": "Renvoyer le code de vérification"
+  }
+}

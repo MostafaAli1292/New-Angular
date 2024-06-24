@@ -1,0 +1,90 @@
+<!--
+   "profile":{
+    "steps" : {
+      "personal-info" : "Personal Info",
+      "location" : "Location",
+      "medical-state" : "Medical State"
+    }
+  }
+ -->
+<section class="profile auth">
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <div class="steps">
+          <div class="md-stepper-horizontal">
+            <!-- [ngClass]="{'active done': (stepper.selectedIndex) == 0}" -->
+            <div class="md-step "
+              [routerLink]="['/patient/profile/personal-info']" routerLinkActive="active done"
+            >
+              <div class="md-step-title">
+                <!-- Personal Info. -->
+                {{ 'profile.steps.personal-info' | transloco }}
+              </div>
+              <div class="md-step-circle"></div>
+
+              <div class="md-step-bar-left"></div>
+              <div class="md-step-bar-right"></div>
+            </div>
+            <!-- editable -->
+            <!-- [ngClass]="{'active done': (stepper.selectedIndex) == 1}" -->
+            <div class="md-step "
+              [routerLink]="['/patient/profile/location']" routerLinkActive="active done"
+            >
+              <div class="md-step-title">
+                <!-- Location -->
+                {{ 'profile.steps.location' | transloco }}
+              </div>
+              <div class="md-step-circle"></div>
+
+              <div class="md-step-bar-left"></div>
+              <div class="md-step-bar-right"></div>
+            </div>
+            <!--  [ngClass]="{'active done': (stepper.selectedIndex) == 2}" -->
+            <div class="md-step"
+              [routerLink]="['/patient/profile/medical-state']" routerLinkActive="active done"
+            >
+              <div class="md-step-title">
+                <!-- Medical State -->
+                {{ 'profile.steps.medical-state' | transloco }}
+              </div>
+              <div class="md-step-circle"></div>
+
+              <div class="md-step-bar-left"></div>
+              <div class="md-step-bar-right"></div>
+            </div>
+            <!-- <div class="md-step"
+             routerLinkActive="active done"
+          >
+            <div class="md-step-title">
+              {{ 'profile.steps.finish' | transloco }}
+            </div>
+            <div class="md-step-circle"></div>
+
+            <div class="md-step-bar-left"></div>
+            <div class="md-step-bar-right"></div>
+          </div> -->
+          </div>
+        </div>
+
+        <router-outlet></router-outlet>
+
+        <!-- {{stepper.selectedIndex+1}} -->
+
+        <!-- <div>
+          <mat-stepper [linear]="true" #stepper>
+            <mat-step >
+              <app-first-step></app-first-step>
+            </mat-step>
+            <mat-step>
+              <app-second-step></app-second-step>
+            </mat-step>
+            <mat-step>
+              <app-third-step></app-third-step>
+            </mat-step>
+          </mat-stepper>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>

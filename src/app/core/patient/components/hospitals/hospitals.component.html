@@ -1,0 +1,199 @@
+<section class="list main-card-app">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="javascript:void(0)">
+          {{ 'app-name' | transloco }}
+        </a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">
+          <!-- Hospitals -->
+          {{ 'pages.Hospitals' | transloco }}
+        </a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">
+          <!-- Egypt -->
+          {{ 'pages.Egypt' | transloco }}
+        </a></li>
+      </ol>
+    </nav>
+
+    <div>
+      <div class="row">
+        <div class="col-lg-2 filters-menu">
+          <div class="head">
+            <h5>
+              {{ 'pages.Filters' | transloco }}
+            </h5>
+          </div>
+          <accordion >
+            <!-- City -->
+           <accordion-group
+            [heading]= "'search-form.city.placeholder' | transloco"
+             [isOpen]="true">
+              <div style="max-height: 200px;overflow-y: auto;overflow-x: hidden;">
+                <div class="form-check" *ngFor="let city of cities;let index = index">
+                  <input class="form-check-input" type="radio" name="cities" id="city-{{index}}" value="{{city?.Id}}"
+                  [(ngModel)]="CityId"
+                  (change)="getHealthEntityPagedList(filterObject.MaxResultCount,filterObject?.SkipCount,true);getAreasByCityId(city?.Id)"
+                  >
+                  <label class="form-check-label text-capitalize" for="city-{{index}}">
+                    {{city?.Name}}
+                  </label>
+                </div>
+              </div>
+            </accordion-group>
+            <!-- Area -->
+            <accordion-group
+            [heading]= "'search-form.area.placeholder' | transloco"
+             [isOpen]="false">
+              <div>
+                <div class="form-check" *ngFor="let area of areas;let index = index">
+                  <input class="form-check-input" type="radio" name="areas" id="area-{{index}}" value="{{area?.Id}}"
+                  [(ngModel)]="areaId"
+                  (change)="getHealthEntityPagedList(filterObject.MaxResultCount,filterObject?.SkipCount,true);"
+                  >
+                  <label class="form-check-label text-capitalize" for="area-{{index}}">
+                    {{area?.Name}}
+                  </label>
+                </div>
+              </div>
+            </accordion-group>
+
+
+          </accordion>
+
+        </div>
+        <div class="col-lg-10 " id="list" >
+          <div class="filter-tools">
+            <div class="row">
+              <div class="col-auto pl-0">
+                <h4>
+                  <!-- Hospitals -->
+                  {{ 'pages.Hospital' | transloco }}
+                  <span >
+                    {{data?.TotalCount}}
+                     <!-- Hospital -->
+                    {{ 'pages.Hospital' | transloco }}
+                  </span>
+                </h4>
+              </div>
+
+            </div>
+          </div>
+          <div class="cards" >
+            <!-- no-results -->
+            <div class="no-results text-center" *ngIf="!loading && data.Items.length == 0">
+              <div class="card">
+                <div class="card-body">
+                  <img src="assets/icons/no-results.svg" alt="no-results">
+                  <h5 class="mt-2">
+                    <!-- No Results -->
+                    {{ 'pages.No-Results' | transloco }}
+                  </h5>
+                  <p>
+                    <!-- No results found -->
+                    {{ 'pages.No-results-found' | transloco }}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" >
+              <div class="col-lg-6 mb-4" *ngFor="let item of data.Items">
+
+                <div class="card">
+                  <div class="card-body">
+                    <div class="user">
+                      <div class="image" >
+                          <img ngxViewer [viewerOptions]="doctorViewerOptions" src="assets/icons/Hospitals.svg" alt="" style="background: #BEB4D6;"
+
+                          >
+                      </div>
+                      <div class="info">
+                        <h5 class="name">
+                          {{item.Name}}
+                        </h5>
+
+                        <div class="rate">
+                          <img src="assets/icons/Star2.svg" >
+                          <b>
+                            5.0
+                          </b> &nbsp;<span class="">(0
+                            <!-- Reviews -->
+                            {{ 'pages.Reviews' | transloco }}
+                            )</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="work-data">
+
+
+                      <div class="row">
+                        <div class="col-12">
+                          <img src="assets/icons/Calling2.svg" alt="">
+                          <span>
+                            {{convertToArabicNumber(item.HealthEntityPhoneDtos[0])}}
+                          </span>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 d-flex">
+                          <img src="assets/icons/loca.svg" alt="">
+                          <span class="cut-text" style="white-space: pre-wrap;">
+                            {{converter(item.Address)}}
+                          </span>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div>
+                      <a
+                      href= "tel:{{item.HealthEntityPhoneDtos[0]}}"
+                      >
+                        <button class="btn book btn-primary w-100">
+                          <img src="assets/icons/Calling3.svg" width="25">
+                          <!-- Call -->
+                          {{ 'pages.Call' | transloco }}
+                          {{convertToArabicNumber(item.HealthEntityPhoneDtos[0])}}
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+             <div class="row" *ngIf="loading && data.Items.length == 0">
+              <div class="col-lg-6 mb-4" *ngFor="let item of [].constructor(6)">
+                <div class="ph-item">
+                  <div class="ph-col-12">
+                      <div class="ph-picture"></div>
+                      <div class="ph-row">
+                          <div class="ph-col-6 big"></div>
+                          <div class="ph-col-4 empty big"></div>
+                          <div class="ph-col-2 big"></div>
+                          <div class="ph-col-4"></div>
+                          <div class="ph-col-8 empty"></div>
+                          <div class="ph-col-6"></div>
+                          <div class="ph-col-6 empty"></div>
+                          <div class="ph-col-12"></div>
+                      </div>
+                  </div>
+              </div>
+              </div>
+            </div>
+
+            <div class="mt-4 mb-4 text-center" *ngIf="data && data.Items.length != 0">
+              <button class="btn btn-primary btn-lg  p-3" (click)="getHealthEntityPagedList(filterObject.MaxResultCount + 10,filterObject?.SkipCount + 10)">
+                &nbsp;
+                {{ 'pages.Load-More' | transloco }}
+                &nbsp;
+                <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

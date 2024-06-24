@@ -1,0 +1,142 @@
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a [routerLink]="['/patient/home']" class="navbar-brand" href="javascript:void(0)" aria-label="navbar-brand">
+      <img  src="assets/Salamtak.png" alt="logo" class="logo logo-light">
+      <img  src="assets/large-logo2-color.svg" alt="logo" class="logo logo-dark">
+    </a>
+    <button (click)="collapse()" class="navbar-toggler " [ngClass]="{'collapsed': isCollapsed}" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- <span class="navbar-toggler-icon"></span>xx -->
+      <div class="header__menu">
+        <a id="header__button" class="hamburger" href="javascript:void(0)"
+        aria-label="hamburger"
+        [ngClass]="{'hamburger--open': isCollapsed}">
+          <div class="hamburger__inner"></div>
+        </a>
+      </div>
+    </button>
+    <div class="collapse navbar-collapse" [ngClass]="{'show': isCollapsed}" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a [routerLink]="['/patient/home']" routerLinkActive="active" (click)="collapse()"  class="nav-link" aria-current="page" href="javascript:void(0)" aria-label="navbar">
+            <!-- Home -->
+            {{ 'header.links.home' | transloco }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/patient/find-a-doctor']" routerLinkActive="active" (click)="collapse()" class="nav-link" href="javascript:void(0)" aria-label="navbar">
+            <!-- Find a Doctor -->
+            {{ 'header.links.find-a-doctor' | transloco }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/patient/SalamtakGate']" routerLinkActive="active" (click)="collapse()" class="nav-link" href="javascript:void(0)" aria-label="navbar">
+            {{ 'header.links.blogs' | transloco }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/patient/about']" routerLinkActive="active" (click)="collapse()" class="nav-link" href="javascript:void(0)" aria-label="navbar">
+            <!-- About -->
+            {{ 'header.links.about' | transloco }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/patient/contact-us']" routerLinkActive="active" (click)="collapse()" class="nav-link" href="javascript:void(0)" aria-label="navbar">
+            <!-- Contact -->
+            {{ 'header.links.contact' | transloco }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLinkActive="active" (click)="collapse()" class="nav-link" [matMenuTriggerFor]="menu" aria-label="change-language">
+            <!-- Contact -->
+            {{selectedLanguage.name}}
+            <mat-menu #menu="matMenu" class="change-language">
+              <button *ngFor="let language of languages" mat-menu-item (click)="setLanguage(language)">
+                <img class="flag" src="{{language.flag}}">
+                <span>&nbsp; {{language.name}}</span>
+              </button>
+            </mat-menu>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a  routerLinkActive="active"  class="nav-link" href="javascript:void(0)" aria-label="navbar">
+            <!-- Contact -->
+            <img width="30px" style="border-radius: 50%"
+            src="{{selectedLanguage.flag}}"
+         >
+          </a>
+        </li>
+      </ul>
+      <form *ngIf="!user || user.ProfileStatus == 0" class="d-flex" role="search">
+        <button [routerLink]="['/auth/login']" class="btn btn-outline-info">
+          <!-- Log in -->
+          {{ 'header.buttons.login' | transloco }}
+        </button>
+        <button [routerLink]="['/auth/sign-up']" class="btn btn-info text-white">
+          <!-- Sign up -->
+          {{ 'header.buttons.sign-up' | transloco }}
+        </button>
+
+      </form>
+      <div *ngIf="user && user.ProfileStatus != 0" class="user">
+        <div class="notification">
+
+        </div>
+        <mat-menu #menu="matMenu" class="userDropdown">
+          <div class="user-info">
+            <!-- <img class="sm-user-img" src="assets/fake-images-for-test/doc-home.png" alt=""> -->
+            <!-- Dr/ {{user.Name}} -->
+
+            {{this.username}}
+
+          </div>
+          <button mat-menu-item [routerLink]="['/patient/profile']">
+            <img src="assets/icons/Edit.svg">
+            <!-- Edit Profile -->
+            {{ 'header.drop-down.edit-profile' | transloco }}
+          </button>
+          <!-- <button mat-menu-item [routerLink]="['/patient/askList']">
+            <img src="assets/icons/conversation.png">
+             {{ 'header.drop-down.ques' | transloco }}
+          </button> -->
+          <button mat-menu-item [routerLink]="['/patient/my-schedule']">
+            <img src="assets/icons/Calendar2.svg">
+            <!-- My Schedule -->
+            {{ 'header.drop-down.my-schedule' | transloco }}
+          </button>
+          <button mat-menu-item [routerLink]="['/patient/change-password']">
+            <img src="assets/icons/Password.svg">
+            <!-- Change Password -->
+            {{ 'header.drop-down.change-password' | transloco }}
+          </button>
+          <button mat-menu-item (click)="changeLanguage()">
+            <img src="assets/icons/Language2.svg">
+            {{ 'header.drop-down.language' | transloco }}
+
+
+
+          </button>
+          <button mat-menu-item (click)="signOut()">
+            <img src="assets/icons/SignOut.svg">
+            <span class="text-danger">
+              <!-- Sign Out -->
+              {{ 'header.drop-down.sign-out' | transloco }}
+            </span>
+          </button>
+        </mat-menu>
+        <a  [matMenuTriggerFor]="menu" href="javascript:void(0)">
+          <span class="user-name" >
+
+            {{this.username}}
+            <img src="assets/icons/three-dots.svg" alt="">
+
+            <!-- Mohamed Farag -->
+          </span>
+          <!-- <img class="user-img" src="assets/fake-images-for-test/doc-home.png" alt=""> -->
+        </a>
+
+      </div>
+    </div>
+  </div>
+</nav>
+

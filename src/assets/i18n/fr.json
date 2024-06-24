@@ -1,0 +1,587 @@
+{
+  "app-name": "Salamtak",
+  "form": {
+    "input": {
+      "email_or_phone": {
+        "label": "Email ou téléphone",
+        "placeholder": "Entrez votre email ou téléphone",
+        "validation": {
+          "required": "Email ou téléphone est requis"
+        }
+      },
+      "phone": {
+        "label": "Numéro de téléphone",
+        "placeholder": "Entrez votre téléphone",
+        "validation": {
+          "required": "Le numéro de téléphone est requis",
+          "pattern": "Le format du téléphone n'est pas valide, veuillez le vérifier.",
+          "minlength": "Le numéro de téléphone doit comporter au moins 11 caractères.",
+          "maxlength": "Le numéro de téléphone ne peut pas comporter plus de 11 caractères."
+        }
+      },
+      "password": {
+        "label": "Mot de passe",
+        "placeholder": "Tapez votre mot de passe",
+        "validation": {
+          "required": "Mot de passe requis",
+          "minlength": "Le mot de passe doit contenir au moins 6 caractères."
+        }
+      },
+      "confirm-password": {
+        "label": "Confirmez le mot de passe",
+        "placeholder": "Entrez votre mot de passe de confirmation",
+        "validation": {
+          "required": "Confirmer le mot de passe est requis",
+          "notMatch": "Le mot de passe et la confirmation du mot de passe ne correspondent pas",
+          "minlength": "Le mot de passe doit contenir au moins 6 caractères."
+        }
+      },
+      "old-password": {
+        "label": "ancien mot de passe",
+        "placeholder": "Entrez votre ancien mot de passe",
+        "validation": {
+          "required": "L'ancien mot de passe est requis",
+          "minlength": "Le mot de passe doit contenir au moins 6 caractères."
+        }
+      },
+      "full-name-en": {
+        "label": "Nom complet en anglais",
+        "placeholder": "Entrez votre nom complet fr",
+        "validation": {
+          "required": "Nom complet En est requis",
+          "pattern": "Nom complet En est un format invalide, veuillez le vérifier."
+        }
+      },
+      "full-name-ar": {
+        "label": "Nom complet en arabe",
+        "placeholder": "Entrez votre nom complet ar",
+        "validation": {
+          "required": "Le nom complet Ar est requis",
+          "pattern": "Le nom complet Ar est un format invalide, veuillez le vérifier."
+        }
+      },
+      "email": {
+        "label": "Adresse e-mail",
+        "placeholder": "Entrer votre Email",
+        "validation": {
+          "required": "L'e-mail est requis",
+          "pattern": "Le format de l'e-mail n'est pas valide, veuillez le vérifier."
+        }
+      },
+      "name": {
+        "label": "Nom",
+        "placeholder": "Entrez votre nom",
+        "validation": {
+          "required": "Le nom est requis",
+          "pattern": "Le nom n'est pas au format valide, veuillez le vérifier."
+        }
+      },
+      "subject": {
+        "label": "Sujet",
+        "placeholder": "Entrez votre sujet",
+        "validation": {
+          "required": "Le sujet est requis"
+        }
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "entrez votre message",
+        "validation": {
+          "required": "Un message est requis"
+        }
+      },
+      "gender": {
+        "label": "Genre",
+        "male": "Homme",
+        "female": "Femme",
+        "validation": {
+          "required": "Un message est requis"
+        }
+      },
+      "dob": {
+        "label": "Date de naissance",
+        "inputs": {
+          "day": {
+            "label": "Jour",
+            "validation": {
+              "required": "Le jour est requis"
+            }
+          },
+          "month": {
+            "label": "Mois",
+            "validation": {
+              "required": "Le mois est requis"
+            }
+          },
+          "year": {
+            "label": "Année",
+            "validation": {
+              "required": "L'année est requise"
+            }
+          }
+        }
+      },
+      "nationality": {
+        "label": "Nationalité",
+        "validation": {
+          "required": "La nationalité est requise"
+        }
+      },
+      "occupation": {
+        "label": "Profession",
+        "validation": {
+          "required": "La profession est requise"
+        }
+      },
+      "city": {
+        "label": "Ville",
+        "validation": {
+          "required": "La ville est obligatoire"
+        }
+      },
+      "area": {
+        "label": "Zone",
+        "validation": {
+          "required": "La zone est requise"
+        }
+      },
+      "street": {
+        "label": "Rue",
+        "validation": {
+          "required": "La rue est obligatoire"
+        }
+      },
+      "building-number": {
+        "label": "Numéro du bâtiment",
+        "validation": {
+          "required": "Le numéro de bâtiment est requis"
+        }
+      },
+      "floor-number": {
+        "label": "Numéro d'étage",
+        "validation": {
+          "required": "Le numéro d'étage est requis"
+        }
+      },
+      "apartment-number": {
+        "label": "Numéro d'appartement",
+        "validation": {
+          "required": "Le numéro d'appartement est requis"
+        }
+      },
+      "hight": {
+        "label": "Haut",
+        "validation": {
+          "required": "La hauteur est requise"
+        }
+      },
+      "weight": {
+        "label": "Lester",
+        "validation": {
+          "required": "Le poids est requis"
+        }
+      },
+      "blood-group": {
+        "label": "Groupe sanguin",
+        "validation": {
+          "required": "Le groupe sanguin est requis"
+        }
+      },
+      "pressure": {
+        "label": "Pression (MM/GG)",
+        "validation": {
+          "required": "La pression est nécessaire"
+        }
+      },
+      "sugar-level": {
+        "label": "Niveau de sucre (MG/DL)",
+        "validation": {
+          "required": "Le niveau de sucre est requis"
+        }
+      },
+      "medical-allergies": {
+        "label": "Allergies médicales",
+        "validation": {
+          "required": "Les allergies médicales sont requises"
+        }
+      },
+      "food-allergies": {
+        "label": "Allergies alimentaires",
+        "validation": {
+          "required": "Allergies alimentaires est requis"
+        }
+      },
+      "other-allergies": {
+        "label": "Autres allergies",
+        "validation": {
+          "required": "D'autres allergies sont requises"
+        }
+      },
+      "prescriptions": {
+        "label": "Ordonnances",
+        "validation": {
+          "required": "Une ordonnance est requise"
+        }
+      },
+      "current-medication": {
+        "label": "Médicament actuel",
+        "validation": {
+          "required": "Les médicaments actuels sont requis"
+        }
+      },
+      "past-medication": {
+        "label": "Médicaments antérieurs",
+        "validation": {
+          "required": "Des médicaments antérieurs sont requis"
+        }
+      },
+      "injuries": {
+        "label": "Blessures",
+        "validation": {
+          "required": "Des blessures sont nécessaires"
+        }
+      },
+      "chronic-diseases": {
+        "label": "Maladies chroniques",
+        "validation": {
+          "required": "Maladies chroniques est requis"
+        }
+      },
+      "surgeries": {
+        "label": "Chirurgies",
+        "validation": {
+          "required": "Des chirurgies sont nécessaires"
+        }
+      }
+    },
+    "buttons": {
+      "send": "Envoyer",
+      "login": "Connexion",
+      "save": "Sauvegarder",
+      "sign-up": "S'inscrire",
+      "verify": "Vérifier",
+      "cancel": "Annuler",
+      "save-changes": "Sauvegarder les modifications",
+      "next": "Suivant",
+      "previous": "Précédent"
+    }
+  },
+  "swal": {
+    "confirmBooking": {
+      "title": "Confirmer la réservation",
+      "text": "Êtes-vous sûr de vouloir prendre ce rendez-vous ?",
+      "confirmButtonText": "Oui, réservez-le!",
+      "cancelButtonText": "Non, annulez-le !"
+    },
+    "Soon":{
+      "title":"Le service sera activé plus tard",
+      "ConfirmButtonText":"Bien"
+    }
+  },
+  "header": {
+    "links": {
+      "home": "Maison",
+      "find-a-doctor": "Trouver un médecin",
+      "blogs": "Blogues",
+      "about": "À propos",
+      "contact": "Contact"
+    },
+    "buttons": {
+      "login": "Connexion",
+      "sign-up": "S'inscrire"
+    },
+    "drop-down": {
+      "edit-profile": "Editer le profil",
+      "my-schedule": "Mon emploi du temps",
+      "change-password": "Changer le mot de passe",
+      "language": "Langue",
+      "sign-out": "Se déconnecter"
+    }
+  },
+  "footer": {
+    "title": "Trouvez votre vie meilleure avec salamtak",
+    "columns": {
+      "site-map": {
+        "title": "Plan du site",
+        "links": {
+          "about": "about",
+          "Our-Team": "Our Team ",
+          "Careers": "Careers",
+          "Press":"Press"
+        }
+      },
+      "landing": {
+        "title": "Atterrissage",
+        "links": {
+          "mobile-app": "Application mobile",
+          "clinics": "Cliniques",
+          "doctors": "Médecins",
+          "hospitals": "Hôpitaux",
+          "PolyClinic":"PolyClinic",
+          "insurance":"insurance",
+          "online-consults": "Consultations en ligne",
+          "booking": "Réservation"
+        }
+      },
+      "utility": {
+        "title": "Utilitaire",
+        "links": {
+          "faq": "FAQ",
+          "terms-conditions": "Terms & Conditions",
+          "Privacy-Policy":"Privacy Policy",
+          "Doctors-Privacy-Policy":"Doctors Privacy Policy"
+
+
+        }
+      }
+    }
+  },
+  "search-form": {
+    "specialty": {
+      "label": "Sélectionnez la spécialité",
+      "placeholder": "Sélectionnez la spécialité",
+      "search-placeholder": "Choisissez la spécialité"
+    },
+    "city": {
+      "label": "Ville",
+      "placeholder": "Choisissez la ville",
+      "search-placeholder": "Choisissez la ville"
+    },
+    "area": {
+      "label": "Zone",
+      "placeholder": "Choisissez la zone",
+      "search-placeholder": "Choisissez la zone"
+    },
+    "name": {
+      "label": "Rechercher par nom",
+      "placeholder": "Rechercher par nom"
+    }
+  },
+  "home": {
+    "main-section": {
+      "title": "Protégez et prenez soin de",
+      "title-span": "Votre santé"
+    },
+    "services": {
+      "title": "Nos services",
+      "description": "Nous avons plusieurs services que vous pouvez choisir. ",
+      "cards": {
+        "text": "Vous pouvez nous appeler pour tout support",
+        "button": "Reserve maintenant"
+      }
+    },
+    "medical-services-directory": {
+      "title": "Répertoire des services médicaux",
+      "description": "Nous avons plusieurs services que vous pouvez choisir. ",
+      "cards": {
+        "radiology-center": "Centre de radiologie",
+        "laboratories": "Laboratoires",
+        "pharmacies": "Pharmacies",
+        "polyclinics": "Polycliniques",
+        "hospitals": "Hôpitaux"
+      }
+    },
+    "trusted": {
+      "title": "Your health and the health of our families is important to us and every doctor",
+      "description": "Avec une bonne expérience, nos clients nous ont fait confiance pour prendre soin de leur santé"
+    },
+    "popular-doctors": {
+      "title": "Médecins populaires",
+      "see-all": "Voir tout"
+    },
+    "top-specialties": {
+      "title": "Meilleures spécialités",
+      "cards": {
+        "Skin": "Peau",
+        "Teeth": "Dents",
+        "Child": "Enfant",
+        "Therapist": "Thérapeute"
+      }
+    },
+    "what-people-say": {
+      "small": "TÉMOIGNAGE",
+      "big": "Ce que les gens disent"
+    },
+    "our-blog": {
+      "title": "Notre blog",
+      "description": "Augmentez vos connaissances en lisant des articles avec ce blog. ",
+      "see-all": "Voir tout"
+    },
+    "download-section": {
+      "title": "Obtenez l'application Salamtak maintenant"
+    }
+  },
+  "find-a-doctor": {
+    "breadcrumb": {
+      "find-a-doctor": "Trouver un médecin",
+      "dentist-in-egypt": "Egypte"
+    },
+    "filters-menu": {
+      "title": "Filtres",
+      "gender": {
+        "title": "Genre",
+        "male": "Homme",
+        "female": "Femme"
+      },
+      "seiority": {
+        "title": "Priorité"
+      },
+      "service": {
+        "title": "Service"
+      },
+      "date": {
+        "title": "Date",
+        "description": "Choisissez la date"
+      },
+      "price": {
+        "title": "Prix",
+        "description": "Échelle des prix",
+        "from": "Depuis",
+        "to": "Pour"
+      },
+      "apply": "Appliquer"
+    },
+    "doctors-list": {
+      "title": "Liste des médecins",
+      "doctors": "Médecins",
+      "sorting": {
+        "title": "Trier par",
+        "most-popular": "Le plus populaire",
+        "reviews": "Commentaires",
+        "wating-time": "Temps d'attente",
+        "fees": "Frais"
+      },
+      "most-popular-placeholder": "Le plus populaire",
+      "no-results": {
+        "title": "Aucun résultat",
+        "description": "Aucun résultat trouvé"
+      },
+      "cards": {
+        "dr": "Dr.",
+        "reviews": "Commentaires",
+        "sub-specialization": "Sous-spécialisation",
+        "address": "Area",
+        "waiting-time": "Temps d'attente",
+        "fees": "Frais",
+        "book-now": "Reserve maintenant",
+        "service": "Service"
+      },
+      "load-more": "Charger plus"
+    }
+  },
+  "blogs": {
+    "title": "Notre blog",
+    "description": "Augmentez vos connaissances en lisant des articles avec ce blog. ",
+    "search-placeholder": "Sujet",
+    "button": "Recherche",
+    "recent-articles": "Articles récents",
+    "all-articles": "Tous les articles"
+  },
+  "about": {
+    "breadcrumb": {
+      "about": "À propos"
+    },
+    "title": "Nous vous aidons à vous améliorer toujours",
+    "description": "Au fil des ans, nous nous efforçons de créer les technologies les plus innovantes utilisées <br> par les petites et moyennes entreprises",
+    "contact-button": "Contactez-nous",
+    "our-achievement": {
+      "title": "Notre réalisation",
+      "cards": {
+        "clients": "Nos clients sont répartis dans 17 pays à travers le monde",
+        "thousand": "Nous avons 13 000 clients et plus dans le monde",
+        "feedback": "Bonnes critiques et commentaires positifs de notre client",
+        "experience": "Plus de 3 ans d'expérience, assurez-vous de choisir nos services"
+      }
+    },
+    "achieve": {
+      "title": "Donner aux entreprises les moyens de réussir.",
+      "description": "Nous fournissons aux petites industries, aux organisations et aux instituts des industries de haute technologie des composants modernes."
+    },
+    "blogs": {
+      "title": "Lire notre blog",
+      "button": "Voir tout"
+    },
+    "review": {
+      "title": "Comprendre le marché est la clé d'une entreprise prospère. ",
+      "name": "Alex - PDG"
+    }
+  },
+  "contact-us": {
+    "breadcrumb": {
+      "contact-us": "Contactez-nous"
+    },
+    "title": "Contactez-nous",
+    "description": "Vous avez une question ou vous voulez juste dire bonjour ?  <br> d'avoir de tes nouvelles.",
+    "email": {
+      "label": "E-mail",
+      "description": "Envoyez-nous un e-mail pour obtenir de l'aide avec un produit ou un service actuel"
+    },
+    "call": {
+      "label": "Appel",
+      "description": "Appelez-nous pour parler à un membre de notre équipe."
+    },
+    "help-support": {
+      "title": "Aider",
+      "description": "Consultez des ressources utiles, des FAQ et des outils de développement.",
+      "button": "Centre de soutien"
+    }
+  },
+  "doctor-profile": {
+    "views": "Vues",
+    "specialized-in": "Spécialisé dans",
+    "book-now": "Reserve maintenant",
+    "about-doctor": "À propos du docteur",
+    "doctor-clinics": "Cliniques médicales",
+    "you-can-book-now-at": "Vous pouvez réserver dès maintenant sur",
+    "address": "Area",
+    "waiting-time": "Temps d'attente",
+    "fees": "Frais",
+    "photos-of-clinic": "Photos de Clinique",
+    "reviews": "Commentaires",
+    "book-form": {
+      "title": "Informations de réservation",
+      "description": "Réservez maintenant pour recevoir les coordonnées et le numéro de téléphone de la clinique",
+      "appointments-type": "Type de rendez-vous",
+      "appointments-type-required": "Le type de rendez-vous est requis",
+      "choose-clinic": "Choisissez la clinique",
+      "clinic-required": "Choisir la clinique est requis",
+      "choose-appointment-day": "Choisissez le jour du rendez-vous",
+      "appointment-day-required": "Choisir le jour du rendez-vous est requis",
+      "time-required": "Le temps est requis",
+      "appointments-available": "Rendez-vous disponibles",
+      "no-appointments-available": "Aucun rendez-vous disponible pour ce jour. ",
+      "book-online-pay-at-the-clinic": "Réservez en ligne, Payez à la clinique!",
+      "doctor-requires-reservation": "Le médecin nécessite une réservation!"
+    }
+  },
+  "change-password": {
+    "title": "Changer le mot de passe"
+  },
+  "my-schedule": {
+    "title": "Mon emploi du temps",
+    "upcoming": {
+      "title": "A venir",
+      "sub-title": "Tous les rendez-vous à venir"
+    },
+    "medical-history": {
+      "title": "Antécédents médicaux",
+      "sub-title": "Antécédents médicaux"
+    },
+    "canceled": {
+      "title": "Annulé",
+      "sub-title": "Rendez-vous annulé"
+    }
+  },
+  "profile": {
+    "steps": {
+      "personal-info": "Informations personnelles",
+      "location": "Emplacement",
+      "medical-state": "État médical"
+    }
+  },
+  "timeout": {
+    "title": "Le délai d'attente s'est produit",
+    "description": "veuillez réessayer plus tard ou contactez-nous !",
+    "button": "Réessayez maintenant !"
+  }
+}

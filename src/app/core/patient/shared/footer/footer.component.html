@@ -1,0 +1,213 @@
+<!--
+  "footer":{
+    "title":"Find your better life with salamtek",
+    "columns" : {
+      "site-map": {
+        "title": "Site Map",
+        "links": {
+          "home": "Home",
+          "features": "Features",
+          "testimonial": "Testimonial"
+        }
+      },
+      "Landing":{
+        "title": "Landing",
+        "links": {
+          "mobile-app" : "Mobile App",
+          "clinics" : "Clinics",
+          "doctors" : "Doctors",
+          "hospitals" : "Hospitals",
+          "online-consults" : "Online Consults",
+          "booking" : "Booking"
+        }
+      },
+      "utility":{
+        "title": "Utility",
+        "links": {
+          "faq" : "FAQ",
+          "terms-conditions" : "Terms & Conditions"
+        }
+      }
+    }
+  },
+ -->
+<footer>
+  <div class="container">
+    <div class="row main-row">
+      <div class="col-lg-4 about">
+        <a [routerLink]="['/patient/home']" class="navbar-brand" href="javascript:void(0)" aria-label="navbar-brand">
+          <img  src="assets/Salamtak.png" alt="logo" class="logo logo-light">
+        </a>
+        <br/>
+        <div style="padding-left: 10%;">
+        <!-- Find your better life with salamtek -->
+        <!-- {{ 'footer.title' | transloco }} -->
+          <a  [routerLink]="['/patient/about']" routerLinkActive="active" (click)="collapse()" class="nav-link" href="javascript:void(0)" aria-label="navbar">
+            {{ 'footer.columns.site-map.links.about' | transloco }}
+          </a>
+          <a  [routerLink]="" routerLinkActive="active" (click)="collapse()" class="nav-link" href="javascript:void(0)" aria-label="navbar">
+            {{ 'footer.columns.site-map.links.Our-Team' | transloco }}
+          </a>
+          <a  [routerLink]="" routerLinkActive="active" (click)="collapse()" class="nav-link" href="javascript:void(0)" aria-label="navbar">
+            {{ 'footer.columns.site-map.links.Careers' | transloco }}
+          </a>
+          <a  [routerLink]="['/patient/SalamtakGate']" routerLinkActive="active" (click)="collapse()" class="nav-link" href="javascript:void(0)" aria-label="navbar">
+            {{ 'footer.columns.site-map.links.Press' | transloco }}
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-8 links">
+        <div>
+          <div class="row">
+            <!-- <div class="col">
+              <h4 class="title">
+                {{ 'footer.columns.site-map.title' | transloco }}
+              </h4>
+              <ul>
+                <li>
+                  <a href="javascript:void(0)"  aria-label="home">
+                    {{ 'footer.columns.site-map.links.home' | transloco }}
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"  aria-label="features">
+                    {{ 'footer.columns.site-map.links.features' | transloco }}
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"  aria-label="testimonial">
+                    {{ 'footer.columns.site-map.links.testimonial' | transloco }}
+                  </a>
+                </li>
+              </ul>
+            </div> -->
+            <div class="col">
+              <h4 class="title">
+                <!-- Landing -->
+                {{ 'footer.columns.landing.title' | transloco }}
+
+              </h4>
+              <ul>
+                <!-- <li>
+                  <a href="javascript:void(0)"  aria-label="mobile">
+                    {{ 'footer.columns.landing.links.mobile-app' | transloco }}
+                  </a>
+                </li> -->
+                <!-- <li>
+                  <a href="javascript:void(0)"  aria-label="clinics">
+                    {{ 'footer.columns.landing.links.clinics' | transloco }}
+                  </a>
+                </li> -->
+                <!-- <li>
+                  <a href="javascript:void(0)"  aria-label="doctors">
+                    {{ 'footer.columns.landing.links.doctors' | transloco }}
+                  </a>
+                </li> -->
+                <li>
+                  <a href="/patient/hospitals"  aria-label="hospitals">
+                    <!-- Hospitals -->
+                    {{ 'footer.columns.landing.links.hospitals' | transloco }}
+                  </a>
+                </li>
+                <li>
+                  <a (click)="gotoDoctorWebsi()"  aria-label="hospitals">
+                    <!-- Hospitals -->
+                    {{ 'footer.columns.landing.links.insurance' | transloco }}
+                  </a>
+                </li>
+                <li>
+                  <a href="/patient/pharmacies"  aria-label="consults">
+                    <!-- Online Consults -->
+                    {{ 'footer.columns.landing.links.pharmacies' | transloco }}
+                  </a>
+                </li>
+                <li>
+                  <a href="/patient/find-a-doctor"  aria-label="booking">
+                    <!-- Booking -->
+                    {{ 'footer.columns.landing.links.booking' | transloco }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <h4 class="title">
+                <!-- Landing -->
+                {{ 'footer.columns.Are you A Doctor.title' | transloco }}
+
+              </h4>
+              <ul>
+                <li>
+                  <a (click)="gotoDoctorWebsite()"href="javascript:void(0)"  target="_blank"  aria-label="mobile">
+                    <!-- Mobile App -->
+                    {{ 'footer.columns.Are you A Doctor.links.join-Salamtak' | transloco }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+
+
+
+
+
+            <div class="col">
+              <h4 class="title">
+                <!-- Utility -->
+                {{ 'footer.columns.utility.title' | transloco }}
+              </h4>
+              <ul>
+                <li>
+                  <a href="javascript:void(0)"  aria-label="faq">
+                    <!-- FAQ -->
+                    {{ 'footer.columns.utility.links.faq' | transloco }}
+                  </a>
+                </li>
+                <li>
+                  <a (click)="goto()"href="javascript:void(0)"  target="_blank"  aria-label="terms">
+                    <!-- Terms & Conditions -->
+                    {{ 'footer.columns.utility.links.terms-conditions' | transloco }}
+                  </a>
+                </li>
+                <li>
+                  <a (click)="gotoPrivacy()"href="javascript:void(0)"  target="_blank"  aria-label="terms">
+                    <!-- Terms & Conditions -->
+                    {{ 'footer.columns.utility.links.Privacy-Policy' | transloco }}
+                  </a>
+                </li>
+                <li>
+                  <a (click)="gotoDoctorPrivacy()"href="javascript:void(0)"  target="_blank"  aria-label="terms">
+                    <!-- Terms & Conditions -->
+                    {{ 'footer.columns.utility.links.Doctors-Privacy-Policy' | transloco }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+
+
+            <div class="col-lg-4 padding  about" style="align-self:self-end ;">
+              <!-- Find your better life with salamtek -->
+             <p >{{ 'footer.title' | transloco }}</p>
+              <div class="social-media-icons">
+                <a href=" https://www.facebook.com/Salamtakgroupapp" target="_blank" aria-label="facebook">
+                  <img src="assets/icons/facebook.svg" alt="">
+                </a>
+                <a href=" https://www.instagram.com/salamtakgroup/" target="_blank"  aria-label="twitter">
+                  <img src="assets/icons/instgram.svg" alt="">
+                </a>
+                <a href=" https://www.linkedin.com/company/salamtak" target="_blank"  aria-label="linkedin">
+                  <img src="assets/icons/linkedin.svg" alt="" >
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+

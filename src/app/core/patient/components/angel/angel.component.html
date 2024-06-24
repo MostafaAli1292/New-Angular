@@ -1,0 +1,81 @@
+
+<section class="blogs">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="javascript:void(0)">
+           {{'app-name' | transloco}}
+        </a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">
+          {{'blogs.title' | transloco}}
+        </a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">
+          {{'blogs.angel' | transloco}}
+        </a></li>
+      </ol>
+    </nav>
+
+    <div class="text-center mb-5 head">
+      <h1>
+        {{'blogs.angel' | transloco}}
+      </h1>
+      <p>
+        {{'blogs.angel-title' | transloco}}
+      </p>
+    </div>
+
+
+    <div class="cards mt-5">
+
+
+      <div>
+         <div class="row">
+          <div class="col-lg-6 mb-4" *ngFor="let item of blogs">
+             <div class="card"
+            [style.background-image]="'url(' + storageUrl + '/' + item.image + ')'"
+
+            >
+              <div class="card-body">
+                <div class="texts">
+                  <h4>
+                    {{item.Title}}
+                  </h4>
+                  <p>
+                     {{item.Description | slice:0:100}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="medical-services">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-6 col-md-6" (click)="goto()">
+
+
+       <div style="text-align: center; " >
+      <img src="assets/icons/SalmtakGate.png" width="200px" style="cursor: pointer;" >
+    </div>
+    <p>
+      {{'blogs.emergency' | transloco}}
+    </p>
+  </div>
+  <div class="col-lg-6 col-6 col-md-6">
+
+
+    <div style="text-align: center; ">
+   <img src="assets/icons/SalmtakGate.png" width="200px" style="cursor: pointer;" >
+ </div>
+ <p>
+  {{'blogs.faq' | transloco}}
+</p>
+</div>
+   </div>
+  </div>
+
+</section>

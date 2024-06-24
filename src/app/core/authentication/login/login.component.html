@@ -1,0 +1,96 @@
+<div class="image-container" *ngIf="showImage">
+  <img src="assets/main.jpeg" alt="Your Image"  >
+</div>
+<section class="auth layout_1 login" *ngIf="!showImage">
+  <div class="container">
+    <header>
+      <h1>
+        {{ 'authentication.login.title' | transloco }}
+      </h1>
+      <!-- <p>
+        {{ 'authentication.login.description' | transloco }}
+      </p> -->
+    </header>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+          <!-- Phone Number -->
+      <div class="mb-3">
+        <label for="phone" class="form-label">
+          {{ 'form.input.phone.label' | transloco }}
+        </label>
+        <input formControlName="phone" name="phone" [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }" type="tel" class="form-control" id="phone">
+      </div>
+      <div *ngIf="submitted && f['phone'].errors" class="errors-area mt-2" >
+        <p class="text-danger"  *ngIf="f['phone']['errors']['required']">
+          {{ 'form.input.phone.validation.required' | transloco }}
+        </p>
+        <p class="text-danger"  *ngIf="f['phone']['errors']['pattern']">
+          {{ 'form.input.phone.validation.pattern' | transloco }}
+        </p>
+        <!-- maxLength -->
+        <p class="text-danger"  *ngIf="f['phone']['errors']['maxlength']">
+          {{ 'form.input.phone.validation.maxlength' | transloco }}
+        </p>
+
+      </div>
+
+
+
+      <div class="mb-3 password-area">
+        <label for="password" class="form-label">
+          {{ 'form.input.password.label' | transloco }}
+        </label>
+        <input formControlName="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+
+        type= "{{hidePassword ? 'password' : 'text'}}"
+
+        class="form-control" id="password">
+
+
+        <div class="visibility">
+          <div class="show">
+            <i class="material-icons" (click)="showHidePassword()" *ngIf="hidePassword">visibility</i>
+          </div>
+          <div class="hide">
+            <i class="material-icons active" (click)="showHidePassword()" *ngIf="!hidePassword">visibility_off</i>
+          </div>
+
+        </div>
+      </div>
+      <div *ngIf="submitted && f['password'].errors" class="errors-area mt-2" >
+        <p class="text-danger"  *ngIf="f['password']['errors']['required']">
+          {{ 'form.input.password.validation.required' | transloco }}
+        </p>
+      </div>
+      <div class="mb-3">
+        <div class="row">
+          <div class="col-6">
+            <div class="form-check">
+              <input formControlName="rememberMe" class="form-check-input" type="checkbox" id="rememberMe">
+              <label class="form-check-label" for="rememberMe">
+                <!-- Remember me -->
+                {{ 'authentication.login.remember-me' | transloco }}
+              </label>
+            </div>
+          </div>
+          <div class="col-6 text-end">
+            <a [routerLink]="['/auth/forgot-password']" href="javascript:void(0)" class="forgot" aria-label="forgot">
+              <!-- Forgot password? -->
+              {{ 'authentication.login.forgot-password' | transloco }}
+            </a>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg">
+        {{ 'form.buttons.login' | transloco }}
+      </button>
+      <div class="mt-4 register">
+        <!-- Don't have an account? -->
+        {{ 'authentication.login.dont-have-an-account' | transloco }}
+        <a [routerLink]="['/auth/sign-up']" href="javascript:void(0)" class="text-info" aria-label="sign-up">
+          <!-- Create free account -->
+        {{ 'authentication.login.create-free-account' | transloco }}
+        </a>
+      </div>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+{
+  "authentication-layout":{
+    "help" : "Help",
+    "lay":"Salamtak ... Our aim. ",
+    "out":"Salamtak application is designed to improve health care services and facilities communication between patients and doctors in a manner that serves both thier interests.",
+    "las":"Now,is easer than ever. with a mere touch on your mobile phone. you can instantly book Salamtak inclinic booking, Home visit , Salamtak Connect (call-video call )"
+  },
+  "forgot-password":{
+    "title": "Forgot Password",
+    "description": "Enter your email or phone or phone number we will send you a code to reset the password"
+  },
+  "login": {
+    "title": "Welcome Back!",
+    "description": "Salamtak website It gives you the ability to control the dates of medical disclosures of all kinds as well as statistics about your work",
+    "remember-me": "Remember me",
+    "forgot-password": "Forgot Password?",
+    "dont-have-an-account" : "Don't Have An Account?",
+    "create-free-account" : "Create new account",
+    "welcome-user":"Welcome"
+
+  },
+  "new-password" : {
+    "title": "New Password"
+  },
+  "reset-successfully" :{
+    "title": "Password reset successfully",
+    "description": "Password reset successfully"
+  },
+  "sign-up" : {
+    "title": "Sign Up",
+    "upload-your-photo": "Upload your photo",
+    "i-agree-to-the": "By Signing Up You Agree To Salamtak's",
+    "terms-and-conditions": "Terms and Conditions & Privacy Policy",
+    "terms-required" : "Terms and Conditions is required",
+    "are-you-have-an-account": "Do You Have An Account ?",
+    "login": "Login",
+    "optional": "Optional"
+  },
+  "verification-code" : {
+    "title-create-account": "Phone Verification",
+    "title-forgot-password": "Forget password",
+    "description": "Verification Code Is Send To",
+    "verification-code-will-be-sent-within": "Please Enter The Verification Code That Has Been Sent To Your Mobile Phone",
+    "remain":"Remaining Time",
+    "resend-code" : "Resend Activation code",
+    "code":"Verification Code Sent Successfully",
+    "suc":"successfully",
+    "opps":"Oops...",
+    "mess":"Invalid Verification Code !"
+  },
+  "contact-us": {
+    "For-support-call-us": "For support call us"
+  }
+}

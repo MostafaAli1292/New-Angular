@@ -1,0 +1,54 @@
+<section class="auth layout_1 verification-code">
+  <div class="container">
+    <header>
+      <h1>
+        <!-- {{fromPage == 'forgot-password' ? 'Forget password' : 'Create Account'}} -->
+        {{fromPage == 'forgot-password' ? ('authentication.verification-code.title-forgot-password' | transloco) : ('authentication.verification-code.title-create-account' | transloco)}}
+
+      </h1>
+      <p>
+        <!-- Please enter the verification code you
+received from  -->
+{{ 'authentication.verification-code.description' | transloco }}
+
+<span>  {{phone}}</span>
+            </p>
+
+    </header>
+    <form action="javascript:void(0)">
+      <div class="mb-3 mt-5">
+        <code-input
+        dir="ltr"
+              [codeLength]="codeLength"
+              [isCodeHidden]="false"
+              (codeChanged)="onCodeChanged($event)"
+              (codeCompleted)="onCodeCompleted($event)">
+        </code-input>
+
+        <!-- <input formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" type="email" class="form-control" id="email" placeholder="Enter your Email Adress"> -->
+      </div>
+
+     <br>
+     <p class='time'>
+      <!-- Verification code will be sent within -->
+      {{ 'authentication.verification-code.verification-code-will-be-sent-within' | transloco }}
+
+      <span *ngIf="message != null" class="text-info"> {{ 'authentication.verification-code.remain' | transloco }}..{{message}}</span>
+<br>
+<!-- *ngIf="message == null"  -->
+      <!-- <a  href="javascript:void(0)"  class="text-info" (click)="reSendCode()">
+        {{ 'authentication.verification-code.resend-code' | transloco }}
+       </a> -->
+     </p>
+     <p>
+      <a *ngIf="message==null"  href="javascript:void(0)"  class="text-info" (click)="reSendCode()">
+        {{ 'authentication.verification-code.resend-code' | transloco }}
+        <!-- Resend verification code -->
+      </a>
+     </p>
+      <button [disabled]="!codeCompleted" type="submit" (click)="verify()" class="btn btn-primary btn-lg">
+        {{ 'form.buttons.verify' | transloco }}
+      </button>
+    </form>
+  </div>
+</section>

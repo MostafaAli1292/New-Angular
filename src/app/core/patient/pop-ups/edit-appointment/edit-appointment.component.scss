@@ -1,0 +1,30 @@
+.card{
+  .user{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    img{
+      margin-right: 10px;
+    }
+    .info{
+      .name{
+        font-weight: 600;
+        font-size: 18px;
+        color: #000000;
+        margin-bottom: 6px;
+      }
+      .job{
+        font-size: 14px;
+        color: #8F949F;
+        margin-bottom: 0;
+      }
+      .rate{
+        span{
+          color: #8F949F;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}

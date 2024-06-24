@@ -1,0 +1,143 @@
+<!--
+POST
+​/api​/{culture}​/DoctorSearch​/DoctorSearch2
+
+  https://salamtechapi.azurewebsites.net/api/en/DoctorSearch/DoctorSearch2
+
+
+  {
+  "MaxResultCount": 10 ,
+  "SkipCount": 0 - 10,
+  "DoctorName": "string",
+  "SpecialistId": 0, https://salamtechapi.azurewebsites.net/api/en/Specialist/GetSpecialist
+  "CityId": 0, https://salamtechapi.azurewebsites.net/api/en/City/GetCities?CountryId=1
+  "AreaId": 0, https://salamtechapi.azurewebsites.net/api/en/Area/GetAreasByCityId?cityId=1
+  "GenderId": 0,  Gender 1 for Male 2 Female
+
+  في صفحه عرض الفلتر هنضيف 2 انبوت هيكتب فيهم السعر من الي
+  "FeesFrom": 0,
+  "FeesTo": 0,
+
+  "SeniortyLevelId": 0, https://salamtechapi.azurewebsites.net/api/en/SeniorityLevel/GetSeniorityLevel
+  "SubSpecialistId": [
+    0 https://salamtechapi.azurewebsites.net/api/en/Specialist/GetSubSpecialist?specialListId=1
+  ],
+
+  "MedicalExaminationTypeId": 0,
+  "AvalibleDate": "2023-02-17T18:31:34.245Z"
+}
+
+ -->
+
+
+ <!--
+   "search-form":{
+    "specialty":{
+      "label": "Select Specialty",
+      "placeholder":"Select Specialty",
+      "search-placeholder": "Choose Specialty"
+    },
+    "city":{
+      "label": "City",
+      "placeholder":"Choose City",
+      "search-placeholder": "Choose City"
+    },
+    "area":{
+      "label": "Area",
+      "placeholder":"Choose Area",
+      "search-placeholder": "Choose Area"
+    },
+    "name" : {
+      "label": "Search by Name",
+      "placeholder":"Search by Name"
+    }
+  },
+  -->
+<section class="search-form">
+  <form>
+    <div class="main">
+      <!-- *ngIf="specialists" -->
+      <div >
+        <h4>
+          <!-- {{'search-form.specialty.label' | transloco}} -->
+          <!-- Select Specialty -->
+        </h4>
+        <mat-select [(value)]="selectedSpecialty"
+        [placeholder]= "'search-form.specialty.placeholder' | transloco"
+
+         (selectionChange)="selectedSpecialty = $event.value" required>
+          <mat-select-filter
+          [placeholder]= "'search-form.specialty.search-placeholder' | transloco"
+           [displayMember]="'Name'"
+            [array]="specialists" (filteredReturn)="filteredSpecialists = $event"
+
+          ></mat-select-filter>
+          <mat-option *ngFor="let item of filteredSpecialists" [value]="item">
+            <!-- <img src="{{item.Image}}" alt=""> -->
+            {{item['Name']}}
+          </mat-option>
+        </mat-select>
+
+      </div>
+      <div>
+        <h4>
+          <!-- {{'search-form.city.label' | transloco}} -->
+          <!-- City -->
+        </h4>
+        <mat-select [(value)]="selectedCity"
+        [placeholder] = "'search-form.city.placeholder' | transloco"
+         (selectionChange)="selectedCity = $event.value;getAreas($event.value.Id)">
+          <mat-select-filter
+          [placeholder]= "'search-form.city.search-placeholder' | transloco"
+          [displayMember]="'Name'"
+          [array]="cities" (filteredReturn)="filteredCities =$event"></mat-select-filter>
+          <mat-option *ngFor="let item of filteredCities" [value]="item">
+            {{item['Name']}}
+          </mat-option>
+        </mat-select>
+      </div>
+      <div>
+        <h4>
+          <!-- {{'search-form.area.label' | transloco}} -->
+          <!-- Area -->
+        </h4>
+        <mat-select [(value)]="selectedArea"
+        [placeholder] = "'search-form.area.placeholder' | transloco"
+
+         (selectionChange)="selectedArea = $event.value">
+          <mat-select-filter
+          [placeholder]= "'search-form.area.search-placeholder' | transloco"
+           [displayMember]="'Name'"
+          [array]="areas" (filteredReturn)="filteredAreas =$event"></mat-select-filter>
+          <mat-option *ngFor="let item of filteredAreas" [value]="item">
+            {{item['Name']}}
+          </mat-option>
+        </mat-select>
+      </div>
+      <div>
+        <h4>
+          <!-- {{'search-form.name.label' | transloco}} -->
+          <!-- Search by Name -->
+        </h4>
+        <input type="text" [(ngModel)]="name" name="name" style="text-align: center;"
+        [placeholder]  = "'search-form.name.placeholder' | transloco"
+        >
+      </div>
+      <div>
+        <h4 ></h4>
+        <!-- [routerLink]="['/patient/find-a-doctor']" -->
+        <button (click)="search()" class="btn btn-primary" type="button" aria-label="search" >
+            <img src="assets/icons/Search.svg" alt="" ><p>{{'search-form.search.placeholder' | transloco}}</p>
+        </button>
+      </div>
+      <!-- <button class="btn btn-info" type="submit">Search</button> -->
+    </div>
+    <!-- <mat-select placeholder="Using array of objects">
+      <mat-select-filter [placeholder]="'Filter'" [displayMember]="'name'" [array]="variables2" (filteredReturn)="filteredList5 =$event"></mat-select-filter>
+      <mat-option *ngFor="let item of filteredList5" [value]="item">
+        {{item.name}}
+      </mat-option>
+    </mat-select> -->
+  </form>
+
+</section>

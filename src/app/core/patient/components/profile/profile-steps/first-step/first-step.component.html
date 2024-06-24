@@ -1,0 +1,423 @@
+<!--
+  "form" : {
+    "input" :{
+      "email_or_phone": {
+        "label": "Email or Phone",
+        "placeholder": "Enter your email or phone",
+        "validation" : {
+          "required": "Email or Phone is required"
+        }
+      },
+      "phone": {
+        "label": "Phone Number",
+        "placeholder": "Enter your phone",
+        "validation" : {
+          "required": "Phone Number is required",
+          "pattern" : "Phone is invalid format please check it.",
+          "minlength" : "Phone must be at least 11 characters long.",
+          "maxlength" : "Phone cannot be more than 11 characters long."
+        }
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter your password",
+        "validation" : {
+          "required": "Password is required",
+          "minlength" : "Password must be at least 6 characters long."
+        }
+      },
+      "confirm-password" : {
+        "label": "Confirm Password",
+        "placeholder": "Enter your confirm password",
+        "validation" : {
+          "required": "Confirm Password is required",
+          "notMatch": "Password and Confirm Password not match",
+          "minlength" : "Password must be at least 6 characters long."
+        }
+      },
+      "old-password" : {
+        "label": "Old Password",
+        "placeholder": "Enter your old password",
+        "validation" : {
+          "required": "Old Password is required",
+          "minlength" : "Password must be at least 6 characters long."
+        }
+      },
+      "full-name-en": {
+        "label": "Full Name in English",
+        "placeholder": "Enter your full name en",
+        "validation" : {
+          "required": "Full Name En is required",
+          "pattern" : "Full Name En is invalid format please check it."
+        }
+      },
+      "full-name-ar": {
+        "label": "Full Name in Arabic",
+        "placeholder": "Enter your full name ar",
+        "validation" : {
+          "required": "Full Name Ar is required",
+          "pattern" : "Full Name Ar is invalid format please check it."
+        }
+      },
+      "email": {
+        "label": "Email address",
+        "placeholder": "Enter your email",
+        "validation" : {
+          "required": "Email is required",
+          "pattern" : "Email is invalid format please check it."
+        }
+      },
+      "name":{
+        "label": "Name",
+        "placeholder": "Enter your name",
+        "validation" : {
+          "required": "Name is required",
+          "pattern" : "Name is invalid format please check it."
+        }
+      },
+      "subject":{
+        "label": "Subject",
+        "placeholder": "Enter your subject",
+        "validation" : {
+          "required": "Subject is required"
+        }
+      },
+      "message":{
+        "label": "Message",
+        "placeholder": "Enter your message",
+        "validation" : {
+          "required": "Message is required"
+        }
+      }
+    },
+    "buttons": {
+      "send": "Send",
+      "login": "Log in",
+      "save": "Save",
+      "sign-up": "Sign Up",
+      "verify" : "Verify",
+      "cancel" : "Cancel"
+    }
+  },
+ -->
+<form  [formGroup]="form" (ngSubmit)="formSubmit()" class="form">
+  <div class="text-center d-block mb-4" *ngIf="form.value?.image">
+    <input type="text" hidden formControlName="image">
+    <img src="{{form.value.image}}" onerror="this.src='https://ui-avatars.com/api/?name=';" style="width: 50px;height: 50px; margin: 0 auto;">
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>
+          {{ 'form.input.full-name-en.label' | transloco }}
+        </label>
+        <input type="text" class="form-control"
+        placeholder= "{{ 'form.input.full-name-en.placeholder' | transloco }}"
+         formControlName="FullNameEn" [ngClass]="{ 'is-invalid': formSubmitted && ff['FullNameEn']['errors'] }">
+      </div>
+      <div *ngIf="formSubmitted && ff['FullNameEn'].errors" class="errors-area mt-2">
+        <p class="text-danger" *ngIf="ff['FullNameEn']['errors']['required']">
+          {{ 'form.input.full-name-en.validation.required' | transloco }}
+        </p>
+        <p class="text-danger" *ngIf="ff['FullNameEn']['errors']['pattern']">
+          {{ 'form.input.full-name-en.validation.pattern' | transloco }}
+        </p>
+        <p class="text-danger" *ngIf="ff['FullNameEn']['errors']['space']">
+          {{ 'form.input.full-name-en.validation.space' | transloco }}
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>
+          <!-- Full Name in Arabic -->
+          {{ 'form.input.full-name-ar.label' | transloco }}
+        </label>
+        <input type="text" class="form-control"
+        placeholder= "{{ 'form.input.full-name-ar.placeholder' | transloco }}"
+         formControlName="FullNameAr" [ngClass]="{ 'is-invalid': formSubmitted && ff['FullNameAr']['errors'] }">
+      </div>
+      <div *ngIf="formSubmitted && ff['FullNameAr'].errors" class="errors-area mt-2">
+        <p class="text-danger" *ngIf="ff['FullNameAr']['errors']['required']">
+          {{ 'form.input.full-name-ar.validation.required' | transloco }}
+        </p>
+        <p class="text-danger" *ngIf="ff['FullNameAr']['errors']['pattern']">
+          {{ 'form.input.full-name-ar.validation.pattern' | transloco }}
+        </p>
+        <p class="text-danger" *ngIf="ff['FullNameAr']['errors']['space']">
+          {{ 'form.input.full-name-ar.validation.space' | transloco }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="Phone">
+          <!-- Gender -->
+<!--
+  "gender":{
+        "label" :  "جنس",
+        "male" : "ذكر",
+        "female" :  "أنثى"
+      }
+ -->
+        {{ 'form.input.gender.label' | transloco }}
+
+        </label>
+        <div>
+          <input type="text" formControlName="gender" hidden>
+          <a mat-button [matMenuTriggerFor]="gendermenu"  [ngClass]="{ 'is-invalid': formSubmitted && ff['gender']['errors'] }" class="w-100 text-start">
+            {{form.value.gender ? form.value.gender : ('form.input.gender.labell' | transloco)}}
+            <img src="assets/icons/drop-down.svg" class="icon">
+          </a>
+        </div>
+        <mat-menu #gendermenu="matMenu">
+          <button mat-menu-item (click)="setGenderValueToForm(1)">
+            <!-- Male -->
+            {{ 'form.input.gender.male' | transloco }}
+
+          </button>
+          <button mat-menu-item (click)="setGenderValueToForm(2)">
+            <!-- Female -->
+            {{ 'form.input.gender.female' | transloco }}
+
+          </button>
+        </mat-menu>
+      </div>
+      <div *ngIf="formSubmitted && ff['gender']['errors']" class="errors-area "  style="margin-top: 2px !important;">
+        <p class="text-danger"  *ngIf="ff['gender']['errors']['required']">
+          <!-- Gender is required. -->
+          {{ 'form.input.gender.validation.required' | transloco }}
+
+        </p>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="row">
+        <!--
+              "dob":{
+        "label" : "Date of Birth",
+        "inputs" :{
+          "day" : {
+            "label" : "Day",
+            "validation":{
+              "required": "Day is required"
+            }
+          },
+          "month" : {
+            "label" : "Month",
+            "validation":{
+              "required": "Month is required"
+            }
+          },
+          "year" : {
+            "label" : "Year",
+            "validation":{
+              "required": "Year is required"
+            }
+          }
+        }
+      }
+         -->
+        <div class="col-4">
+          <div class="form-group">
+            <label for="Phone">
+              <!-- Date of Birth -->
+              {{ 'form.input.dob.label' | transloco }}
+
+            </label>
+            <div>
+              <input type="text" formControlName="day" hidden>
+              <a mat-button [matMenuTriggerFor]="Daymenu"  [ngClass]="{ 'is-invalid': formSubmitted && ff['day']['errors'] }" class="w-100 text-start">
+                {{form.value.day ? form.value.day :  ('form.input.dob.inputs.day.label' | transloco)}}
+
+                <img src="assets/icons/drop-down.svg" class="icon">
+
+              </a>
+            </div>
+            <mat-menu #Daymenu="matMenu">
+              <button mat-menu-item *ngFor="let item of [].constructor(31);let index = index" (click)="setDayValueToForm(index+1)">
+                {{index +1}}
+              </button>
+            </mat-menu>
+          </div>
+          <div *ngIf="formSubmitted && ff['day']['errors']" class="errors-area "  style="margin-top: 2px !important;">
+            <p class="text-danger"  *ngIf="ff['day']['errors']['required']">
+              <!-- required. -->
+              {{ 'form.input.dob.inputs.day.validation.required' | transloco }}
+            </p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="form-group">
+            <label for="Phone"><br></label>
+            <div>
+              <input type="text" formControlName="month" hidden>
+              <a mat-button [matMenuTriggerFor]="Monthmenu" [ngClass]="{ 'is-invalid': formSubmitted && ff['month']['errors'] }" class="w-100 text-start">
+                {{form.value.month ? form.value.month :  ('form.input.dob.inputs.month.label' | transloco)}}
+
+                <img src="assets/icons/drop-down.svg" class="icon" style="margin-right: 0px !important;">
+
+              </a>
+            </div>
+            <mat-menu #Monthmenu="matMenu">
+              <button mat-menu-item *ngFor="let item of [].constructor(12);let index = index" (click)="setMonthValueToForm(index+1)">
+                {{index +1}}
+              </button>
+            </mat-menu>
+          </div>
+          <div *ngIf="formSubmitted && ff['month']['errors']" class="errors-area "  style="margin-top: 2px !important;">
+            <p class="text-danger"  *ngIf="ff['month']['errors']['required']">
+              <!-- required. -->
+              {{ 'form.input.dob.inputs.month.validation.required' | transloco }}
+            </p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="form-group">
+            <label for="Phone"><br></label>
+            <div>
+              <input type="text" formControlName="year" hidden>
+              <a mat-button [matMenuTriggerFor]="Yearmenu"  [ngClass]="{ 'is-invalid': formSubmitted && ff['year']['errors'] }" class="w-100 text-start">
+                {{form.value.year ? form.value.year :  ('form.input.dob.inputs.year.label' | transloco)}}
+                <img src="assets/icons/drop-down.svg" class="icon">
+              </a>
+            </div>
+            <mat-menu #Yearmenu="matMenu">
+              <button mat-menu-item *ngFor="let year of getYears()" (click)="setYearValueToForm(year)">
+                {{year}}
+              </button>
+
+            </mat-menu>
+          </div>
+          <div *ngIf="formSubmitted && ff['year']['errors']" class="errors-area "  style="margin-top: 2px !important;">
+            <p class="text-danger"  *ngIf="ff['year']['errors']['required']">
+              <!-- required. -->
+              {{ 'form.input.dob.inputs.year.validation.required' | transloco }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <!--
+      "nationality":{
+        "label" : "Nationality",
+        "validation" : {
+          "required": "Nationality is required"
+        }
+      },
+      "occupation":{
+        "label" : "Occupation",
+        "validation" : {
+          "required": "Occupation is required"
+        }
+      }
+     -->
+    <div class="col-lg-6">
+      <div class="form-group">
+        <label for="Nationality">
+          <!-- Nationality -->
+          {{ 'form.input.nationality.label' | transloco }}
+
+        </label>
+        <div>
+          <input type="text" formControlName="Nationality" hidden>
+          <a mat-button [matMenuTriggerFor]="Nationalitymenu"  [ngClass]="{ 'is-invalid': formSubmitted && ff['Nationality']['errors'] }" class="w-100 text-start">
+            {{form.value.Nationality ? form.value.Nationality.Name :  ('form.input.nationality.labell' | transloco) }}
+            <img src="assets/icons/drop-down.svg" class="icon">
+          </a>
+        </div>
+        <mat-menu #Nationalitymenu="matMenu">
+          <button mat-menu-item *ngFor="let country of countries" (click)="setNationalityToForm(country)">
+            {{country.Name}}
+          </button>
+        </mat-menu>
+      </div>
+      <div *ngIf="formSubmitted && ff['Nationality']['errors']" class="errors-area "  style="margin-top: 2px !important;">
+        <p class="text-danger"  *ngIf="ff['Nationality']['errors']['required']">
+          <!-- Nationality is required. -->
+          {{ 'form.input.nationality.validation.required' | transloco }}
+        </p>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <!--  -->
+      <!-- <div class="form-group">
+        <label for="Occupation">
+          {{ 'form.input.occupation.label' | transloco }}
+        </label>
+        <div>
+          <input type="text" formControlName="Occupation" hidden>
+          <a mat-button [matMenuTriggerFor]="Occupationmenu"  [ngClass]="{ 'is-invalid': formSubmitted && ff['Occupation']['errors'] }" class="w-100 text-start">
+            {{form.value.Occupation ? form.value.Occupation.Name : ('form.input.occupation.label' | transloco)}}
+            <img src="assets/icons/drop-down.svg" class="icon">
+          </a>
+        </div>
+        <mat-menu #Occupationmenu="matMenu">
+          <button mat-menu-item *ngFor="let occupation of occupations" (click)="setOccupationToForm(occupation)">
+            {{occupation.Name}}
+          </button>
+        </mat-menu>
+      </div> -->
+      <div class="form-group">
+        <label>
+          {{ 'form.input.occupation.label' | transloco }}
+        </label>
+        <input type="text" class="form-control"
+        placeholder= "{{ 'form.input.occupation.label' | transloco }}"
+         formControlName="Occupation" [ngClass]="{ 'is-invalid': formSubmitted && ff['Occupation']['errors'] }">
+      </div>
+
+      <div *ngIf="formSubmitted && ff['Occupation']['errors']" class="errors-area "  style="margin-top: 2px !important;">
+        <p class="text-danger"  *ngIf="ff['Occupation']['errors']['required']">
+          <!-- Occupation is required. -->
+          {{ 'form.input.occupation.validation.required' | transloco }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="text-end actions">
+    <!-- <button class="btn btn-outline-info">
+      Cancel
+    </button> -->
+    <!-- <button class="btn btn-info">
+      Save Changes
+    </button> -->
+
+
+    <!-- <button class="btn btn-outline-info"
+
+    >
+      Cancel
+    </button> -->
+
+    <!-- *ngIf="!patient" -->
+    <button class="btn btn-info" disabled
+      #saveChanges
+    >
+      {{ 'form.buttons.next' | transloco }}
+    </button>
+
+    <!-- <button (click)="nextStep()" type="button" class="btn btn-primary text-white ">
+      {{ 'form.buttons.next' | transloco }}
+    </button> -->
+
+  </div>
+
+  <!-- <div [ngSwitch]="patient.OccupationId && patient.CountryId">
+    <div *ngSwitchCase="true">output</div>
+    <div *ngSwitchDefault>output2</div>
+  </div> -->
+
+
+</form>
